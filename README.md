@@ -1,3 +1,3 @@
-# next-express
+# Skin First RX
 
-Boilerplate next frontend + express backend
+Web app for Skin First RX
