@@ -12,10 +12,20 @@ const BtnWrapper = s.a`
   margin-bottom: 1rem;
 `
 
-export const Btn = ({ href, children }) => (
-  <Link href={href}>
+export const Btn = ({ href = '', children }) => {
+  if (href) {
+    return (
+      <Link href={href}>
+        <BtnWrapper>
+          {children}
+        </BtnWrapper>
+      </Link>
+    )
+  }
+
+  return (
     <BtnWrapper>
       {children}
     </BtnWrapper>
-  </Link>
-)
+  )
+}

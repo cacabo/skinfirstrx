@@ -4,7 +4,7 @@ import s from 'styled-components'
 import { Text } from '../../components'
 import { BORDER, PURPLE } from '../../constants/colors'
 
-const Input = s.input`
+const Textarea = s.textarea`
   border-width: 2px;
   border-style: solid;
   border-color: ${BORDER};
@@ -27,10 +27,11 @@ const Input = s.input`
   }
 `
 
-export default ({ name = '', label = '', placeholder = '' }) => (
+export default ({ name = '', label = '', placeholder = '', rows=4 }) => (
   <div>
     {label && <Text>{label}</Text>}
-    <Input
+    <Textarea
+      rows={rows}
       name={name}
       placeholder={placeholder}
     />

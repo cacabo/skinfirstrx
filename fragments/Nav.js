@@ -25,9 +25,15 @@ const Links = s.div`
 
   a {
     margin-left: 1.5rem;
+    font-size: 1rem;
     line-height: 1.5rem;
-    vertical-align: center;
+    vertical-align: top;
   }
+`
+
+const Icon = s.img`
+  height: 1.5rem;
+  width: auto;
 `
 
 export default () => (
@@ -38,9 +44,15 @@ export default () => (
       </Link>
 
       <Links>
-        <a href="https://mettrimmd.com/actonma/?gclid=CjwKCAjwpeXeBRA6EiwAyoJPKl3rL26WuXVX7GW_5-ozSFdQgkdwMm6dwIc0X3w8KWwJ66d4M1lvZhoCwOoQAvD_BwE">MetTrimMD</a>
-        <a href="">Facebook</a>
-        <a href="">Instagram</a>
+        <a href="https://mettrimmd.com/actonma/?gclid=CjwKCAjwpeXeBRA6EiwAyoJPKl3rL26WuXVX7GW_5-ozSFdQgkdwMm6dwIc0X3w8KWwJ66d4M1lvZhoCwOoQAvD_BwE">
+          MetTrimMD
+        </a>
+        <a href="https://facebook.com">
+          <Icon src="/static/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://instagram.com">
+          <Icon src="/static/instagram.svg" alt="Instagram" />
+        </a>
       </Links>
     </Container>
   </NavWrapper>
