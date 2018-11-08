@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 
 import Layout from '../fragments/Layout/index'
-import { Container } from '../components'
+import { Container, Title, Text } from '../components'
+import Contact from '../fragments/Contact/index'
 
 export default () => (
   <Layout>
@@ -19,6 +20,35 @@ export default () => (
           </Link>
         </li>
       </ul>
+
+      <div>
+        <Title>Free Consultation</Title>
+      </div>
+
+      <div>
+        <Title>Services</Title>
+      </div>
+
+      <div>
+        <Title>Products</Title>
+      </div>
+
+      <div>
+        <Title>Our Providers</Title>
+      </div>
+
+      <div>
+        <Title>Testimonials</Title>
+      </div>
+
+      <div>
+        <Title>FAQ</Title>
+      </div>
+
+      <div>
+        <Title>Contact Us</Title>
+        <Contact />
+      </div>
     </Container>
   </Layout>
 )

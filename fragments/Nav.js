@@ -1,4 +1,6 @@
 import s from 'styled-components'
+import Link from 'next/link'
+
 import { Container } from '../components'
 import { BORDER } from '../constants/colors'
 
@@ -14,6 +16,7 @@ const Logo = s.img`
   display: inline-block;
   height: 2.5rem;
   margin: -0.5rem 0;
+  cursor: pointer;
 `
 
 const Links = s.div`
@@ -30,7 +33,10 @@ const Links = s.div`
 export default () => (
   <NavWrapper>
     <Container>
-      <Logo src="/static/logo.png" alt="Skin First RX Logo" />
+      <Link href="/">
+        <Logo src="/static/logo.png" alt="Skin First RX Logo" />
+      </Link>
+
       <Links>
         <a href="https://mettrimmd.com/actonma/?gclid=CjwKCAjwpeXeBRA6EiwAyoJPKl3rL26WuXVX7GW_5-ozSFdQgkdwMm6dwIc0X3w8KWwJ66d4M1lvZhoCwOoQAvD_BwE">MetTrimMD</a>
         <a href="">Facebook</a>
