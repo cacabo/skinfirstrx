@@ -9,6 +9,7 @@ const BtnWrapper = s.a`
   color: ${WHITE};
   display: inline-block;
   cursor: pointer;
+  margin-bottom: 1rem;
 `
 
 export const Btn = ({ href, children }) => (

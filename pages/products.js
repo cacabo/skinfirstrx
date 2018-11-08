@@ -1,10 +1,15 @@
-import Layout from '../fragments/Layout/index'
 import { Container, Btn } from '../components'
+
+import Layout from '../fragments/Layout/index'
+import Products from '../fragments/Products/index'
 
 export default () => (
   <Layout>
     <Container>
-      <p>a</p>
+      <p>Products</p>
+
+      <Products />
+
       <Btn href="/">
         Back to home
       </Btn>
