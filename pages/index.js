@@ -1,54 +1,45 @@
 import React from 'react'
 import Link from 'next/link'
+import s from 'styled-components'
 
 import Layout from '../fragments/Layout/index'
-import { Container, Title, Text } from '../components'
+import { Container, Preheading, Text, Section } from '../components'
 import Contact from '../fragments/Contact/index'
+import Hero from '../fragments/Hero/index'
 
 export default () => (
   <Layout>
+    <Hero />
+    
     <Container>
-      <ul>
-        <li><Link href='/products' as='/products'><a>Products</a></Link></li>
-        <li><Link href='/b' as='/b'><a>b</a></Link></li>
-        <li>
-          <Link
-            href={{pathname: '/posts', query: { id: '2' }}}
-            as='/posts/2'
-          >
-            <a>post #2</a>
-          </Link>
-        </li>
-      </ul>
+      <Section>
+        <Preheading>Free Consultation</Preheading>
+      </Section>
 
-      <div>
-        <Title>Free Consultation</Title>
-      </div>
+      <Section>
+        <Preheading>Services</Preheading>
+      </Section>
 
-      <div>
-        <Title>Services</Title>
-      </div>
+      <Section>
+        <Preheading>Products</Preheading>
+      </Section>
 
-      <div>
-        <Title>Products</Title>
-      </div>
+      <Section>
+        <Preheading>Our Providers</Preheading>
+      </Section>
 
-      <div>
-        <Title>Our Providers</Title>
-      </div>
+      <Section>
+        <Preheading>Testimonials</Preheading>
+      </Section>
 
-      <div>
-        <Title>Testimonials</Title>
-      </div>
+      <Section>
+        <Preheading>FAQ</Preheading>
+      </Section>
 
-      <div>
-        <Title>FAQ</Title>
-      </div>
-
-      <div>
-        <Title>Contact Us</Title>
+      <Section>
+        <Preheading>Contact Us</Preheading>
         <Contact />
-      </div>
+      </Section>
     </Container>
   </Layout>
 )
