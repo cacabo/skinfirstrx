@@ -17,6 +17,7 @@ import Contact from '../fragments/Contact/index'
 import Hero from '../fragments/Hero/index'
 import FAQ from '../fragments/FAQ/index'
 import Consultation from '../fragments/Consultation/index'
+import Services from '../fragments/Services/index'
 
 export default () => (
   <Layout>
@@ -25,17 +26,7 @@ export default () => (
     <Container>
       <Consultation />
 
-      <Section>
-        <Preheading>Services</Preheading>
-
-        <Title>
-          Everything to meet your needs
-        </Title>
-
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
-        </Text>
-      </Section>
+      <Services />
 
       <Section>
         <Preheading>Products</Preheading>

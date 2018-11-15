@@ -2,7 +2,7 @@ import React from 'react'
 import s from 'styled-components'
 
 import { Text } from '../../components'
-import { BORDER, PURPLE } from '../../constants/colors'
+import { BORDER, BLUE } from '../../constants/colors'
 
 const Input = s.input`
   border-width: 2px;
@@ -23,7 +23,7 @@ const Input = s.input`
 
   :active,
   :focus {
-    border-color: ${PURPLE};
+    border-color: ${BLUE};
   }
 `
 
