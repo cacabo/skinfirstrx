@@ -10,15 +10,18 @@ const App = s.div`
   min-height: 75vh;
 `
 
+// TODO favicon
+
 const Layout = ({ children }) => (
   <div>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
       <meta charSet="utf-8" />
 
-      <meta name="description" content="TODO">
-      <meta name="keywords" content="TODO">
-      <meta name="author" content="Skin First RX">
+      <title>Skin First RX</title>
+      <meta name="description" content="TODO" />
+      <meta name="keywords" content="TODO" />
+      <meta name="author" content="Skin First RX" />
 
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet" />
     </Head>

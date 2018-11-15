@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 
   ${minWidth(LG)} {
-    padding: 0 16%;
+    padding: 0 12%;
   }
 `
 
@@ -33,4 +33,13 @@ export const Row = styled.div`
 export const Col = styled.div`
   flex: 1;
   width: ${({ width }) => width || 'auto'};
+`
+
+export const ColSpace = styled(Col)`
+  flex: none;
+  width: ${({ width }) => width || '4rem'};
+
+  ${maxWidth(SM)} {
+    display: none;
+  }
 `

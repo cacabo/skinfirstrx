@@ -1,21 +1,36 @@
 import s from 'styled-components'
 
-import { Container, Section, Title } from '../../components'
-
-
-// background: #C8F8F2;
+import {
+  Preheading,
+  Container,
+  Section,
+  Title,
+  Text,
+  Btn,
+} from '../../components'
+import { SEAFOAM } from '../../constants/colors'
 
 const HeroWrapper = s.div`
-  background: #C8F8F2;
+  background: ${SEAFOAM};
 `
 
 export default () => (
   <HeroWrapper>
     <Container>
       <Section>
+        <Preheading>
+          Skin First RX
+        </Preheading>
+
         <Title>
-          This is the hero
+          Own your skin, not the other way around
         </Title>
+        <Text>
+          Personalized, state-of-the-art skin treatment plans curated by professionals
+        </Text>
+        <Btn>
+          Get started
+        </Btn>
       </Section>
     </Container>
   </HeroWrapper>

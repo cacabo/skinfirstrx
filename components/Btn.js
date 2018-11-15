@@ -1,15 +1,22 @@
 import s from 'styled-components'
 import Link from 'next/link'
-import { PURPLE, WHITE } from '../constants/colors'
+import { BLUE, WHITE, DARK_BLUE } from '../constants/colors'
 
 const BtnWrapper = s.a`
-  background: ${PURPLE};
-  padding: 12px 24px;
-  border-radius: 4px;
+  background: ${BLUE};
+  padding: 18px 24px;
+  border-radius: 0px;
   color: ${WHITE};
   display: inline-block;
   cursor: pointer;
   margin-bottom: 1rem;
+  margin-right: 1.5rem;
+
+  :hover,
+  :focus,
+  :active {
+    background: ${DARK_BLUE};
+  }
 `
 
 export const Btn = ({ href = '', children }) => {

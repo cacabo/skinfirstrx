@@ -10,6 +10,10 @@ export default () => (
       font-family: 'Montserrat', sans-serif;
     }
 
+    a {
+      cursor: hand !important;
+    }
+
     h1,
     h2,
     h3,
