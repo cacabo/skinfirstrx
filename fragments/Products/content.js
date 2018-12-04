@@ -30,13 +30,13 @@ export default [
     "image": "retinol-complex.jpg"
   },
   {
-    "name": "Mineral Shield SPF 35",
-    "retail": 38
-  },
-  {
     "name": "Lumivive",
     "retail": 265,
     "description": "This two-step system gives your skin more power to resist the environment's attack during the day. and recover itself overnight. With full atmospheric protection against blue light and pollution, you may see truly RADIANT skin in as few as 14 days.\nAppropriate for all skin types and tones.\nSystem Includes:\nLUMIVIVE™ Day Damage Defense Serum\nLUMIVIVE™ Night Revitalize Repair Complex",
     "image": "lumvive.jpg"
+  },
+  {
+    "name": "Mineral Shield SPF 35",
+    "retail": 38
   }
 ]

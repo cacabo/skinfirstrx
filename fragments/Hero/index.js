@@ -30,7 +30,7 @@ export default () => (
               Own your skin, not the other way around
             </Title>
             <Text>
-              Personalized, state-of-the-art skin treatment plans curated by professionals
+              Personalized, state-of-the-art skin treatment plans curated by skincare professionals
             </Text>
             <Btn>
               Get started

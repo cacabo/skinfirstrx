@@ -19,6 +19,7 @@ import Products from '../fragments/Products/index'
 import FAQ from '../fragments/FAQ/index'
 import Consultation from '../fragments/Consultation/index'
 import Services from '../fragments/Services/index'
+import Providers from '../fragments/Providers/index'
 
 export default () => (
   <Layout>
@@ -36,6 +37,7 @@ export default () => (
 
       <Section>
         <Preheading>Our Providers</Preheading>
+        <Providers />
       </Section>
 
       <Section>
@@ -46,11 +48,8 @@ export default () => (
         <Preheading>FAQ</Preheading>
         <FAQ />
       </Section>
-
-      <Section>
-        <Preheading>Contact Us</Preheading>
-        <Contact />
-      </Section>
     </Container>
+
+    <Contact />
   </Layout>
 )

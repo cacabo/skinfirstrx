@@ -25,6 +25,7 @@ export const Row = styled.div`
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   ${maxWidth(SM)} {
     display: block;
@@ -34,6 +35,10 @@ export const Row = styled.div`
 export const Col = styled.div`
   flex: ${({ width }) => width ? 'none' : 1};
   width: ${({ width }) => width || 'auto'};
+
+  ${({ flex }) => flex && (`
+    display: flex;
+  `)}
 `
 
 export const ColSpace = styled(Col)`
@@ -43,4 +48,8 @@ export const ColSpace = styled(Col)`
   ${maxWidth(SM)} {
     display: none;
   }
+`
+
+export const RowSpace = styled(Row)`
+  height: 1rem;
 `

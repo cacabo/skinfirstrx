@@ -3,6 +3,10 @@ import s from 'styled-components'
 export const Text = s.p`
   line-height: 1.5;
   margin-bottom: 1rem;
+
+  ${({ right }) => right && (`
+    float: right;
+  `)}
 `
 
 export const Title = s.h1``

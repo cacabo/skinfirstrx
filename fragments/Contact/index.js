@@ -1,23 +1,49 @@
 import React from 'react'
+import s from 'styled-components'
+
 import Input from './Input'
 import Textarea from './Textarea'
+import {
+  Btn,
+  Row,
+  Col,
+  Preheading,
+  Container,
+  ColSpace,
+  Section,
+} from '../../components'
+import { LIGHT_GRAY } from '../../constants/colors'
 
-import { Btn, Row, Col } from '../../components'
+const Image = s.img`
+  width: 100%;
+  height: auto;
+`
 
 export default () => (
-  <Row>
-    <Col>
-      <form>
-        <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />
-        <Input name="email" type="email" label="Email" placeholder="me@email.com" />
-        <Textarea name="body" type="text" label="Message" placeholder="..." />
-        <Input name="services" type="text" label="List services interested in" placeholder="" />
+  <Container>
+    <Section>
+      <Row>
+        <Col>
+          <Preheading>Contact Us</Preheading>
 
-        <Btn>
-          Submit
-        </Btn>
-      </form>
-    </Col>
-    <Col />
-  </Row>
+          <form>
+            <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />
+            <Input name="email" type="email" label="Email" placeholder="me@email.com" />
+            <Textarea name="body" type="text" label="Message" placeholder="..." />
+            <Input name="services" type="text" label="List services interested in" placeholder="" />
+
+            <Btn>
+              Submit
+            </Btn>
+          </form>
+        </Col>
+
+        <ColSpace />
+
+        <Col>
+          <Image src="static/perfect-skin.png" alt="Perfect skin starts here" />
+        </Col>
+      </Row>
+    </Section>
+  </Container>
 )
