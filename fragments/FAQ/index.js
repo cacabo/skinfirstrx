@@ -1,6 +1,6 @@
 import s from 'styled-components'
 
-import { Text } from '../../components'
+import { Text, Title } from '../../components'
 import { BORDER } from '../../constants/colors'
 import content from './content'
 
@@ -12,7 +12,9 @@ const Question = s.div`
 
 export default () => (
   <>
-    <Text>Have a question? Take a look at the ones we often get below.</Text>
+    <Title>Have a question?</Title>
+
+    <Text>Take a look at the ones we often get below.</Text>
 
     {content.map(({ title, body }) => (
       <Question key={title}>
