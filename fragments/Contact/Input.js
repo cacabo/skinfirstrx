@@ -8,7 +8,7 @@ const Input = s.input`
   border-width: 2px;
   border-style: solid;
   border-color: ${BORDER};
-  border-radius: 4px;
+  border-radius: 0;
   font-size: 16px;
   padding: 0.75rem;
   width: 100%;

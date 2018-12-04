@@ -24,6 +24,7 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  flex-wrap: wrap;
 
   ${maxWidth(SM)} {
     display: block;
@@ -31,7 +32,7 @@ export const Row = styled.div`
 `
 
 export const Col = styled.div`
-  flex: 1;
+  flex: ${({ width }) => width ? 'none' : 1};
   width: ${({ width }) => width || 'auto'};
 `
 

@@ -36,7 +36,7 @@ export default () => (
 
         <Col>
           <Links>
-            <a href="https://facebook.com">
+            <a href="https://www.facebook.com/SkinFirstRx">
               <Icon src="/static/facebook.svg" alt="Facebook" />
             </a>
             <a href="https://instagram.com">

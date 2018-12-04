@@ -1,14 +1,13 @@
-import React from 'react'
-
 import content from './content'
+import Product from './Product'
+import { Row } from '../../components'
 
 export default () => (
-  <div>
-    {content.map(({ name, retail }) => (
-      <div key={name}>
-        <p>{name}</p>
-        <p>${retail}</p>
-      </div>
+  <Row>
+    {content.map((props) => (
+      <Product
+        {...props}
+      />
     ))}
-  </div>
+  </Row>
 )

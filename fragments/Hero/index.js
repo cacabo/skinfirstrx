@@ -7,6 +7,8 @@ import {
   Title,
   Text,
   Btn,
+  Row,
+  Col,
 } from '../../components'
 import { SEAFOAM } from '../../constants/colors'
 
@@ -18,19 +20,24 @@ export default () => (
   <HeroWrapper>
     <Container>
       <Section>
-        <Preheading>
-          Skin First RX
-        </Preheading>
+        <Row>
+          <Col>
+            <Preheading>
+              Skin First RX
+            </Preheading>
 
-        <Title>
-          Own your skin, not the other way around
-        </Title>
-        <Text>
-          Personalized, state-of-the-art skin treatment plans curated by professionals
-        </Text>
-        <Btn>
-          Get started
-        </Btn>
+            <Title>
+              Own your skin, not the other way around
+            </Title>
+            <Text>
+              Personalized, state-of-the-art skin treatment plans curated by professionals
+            </Text>
+            <Btn>
+              Get started
+            </Btn>
+          </Col>
+          <Col />
+        </Row>
       </Section>
     </Container>
   </HeroWrapper>

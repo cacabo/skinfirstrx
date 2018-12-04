@@ -9,6 +9,7 @@ const BtnWrapper = s.a`
   color: ${WHITE};
   display: inline-block;
   cursor: pointer;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 1.5rem;
 

@@ -34,6 +34,13 @@ const Links = s.div`
 const Icon = s.img`
   height: 1.5rem;
   width: auto;
+  opacity: 0.375;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
 `
 
 export default () => (
@@ -47,7 +54,7 @@ export default () => (
         <a href="https://mettrimmd.com/actonma/?gclid=CjwKCAjwpeXeBRA6EiwAyoJPKl3rL26WuXVX7GW_5-ozSFdQgkdwMm6dwIc0X3w8KWwJ66d4M1lvZhoCwOoQAvD_BwE">
           MetTrimMD
         </a>
-        <a href="https://facebook.com">
+        <a href="https://www.facebook.com/SkinFirstRx">
           <Icon src="/static/facebook.svg" alt="Facebook" />
         </a>
         <a href="https://instagram.com">

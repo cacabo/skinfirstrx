@@ -15,6 +15,7 @@ import {
 } from '../components'
 import Contact from '../fragments/Contact/index'
 import Hero from '../fragments/Hero/index'
+import Products from '../fragments/Products/index'
 import FAQ from '../fragments/FAQ/index'
 import Consultation from '../fragments/Consultation/index'
 import Services from '../fragments/Services/index'
@@ -30,6 +31,7 @@ export default () => (
 
       <Section>
         <Preheading>Products</Preheading>
+        <Products />
       </Section>
 
       <Section>
