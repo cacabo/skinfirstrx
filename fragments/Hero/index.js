@@ -33,7 +33,7 @@ export default () => (
               Personalized, state-of-the-art skin treatment plans curated by skincare professionals
             </Text>
             <Btn>
-              Get started
+              Get Started
             </Btn>
           </Col>
           <Col />
