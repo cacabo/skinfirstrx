@@ -2,16 +2,20 @@ import s from 'styled-components'
 
 import { Row, Col, Title, Text, RowSpace } from '../../components'
 import content from './content'
+import brands from './brands'
 
 const Image = s.img`
   width: auto;
   height: 4.5rem;
   max-width: 100%;
   display: inline-block;
+  margin: 0.5rem 5%;
 `
 
 const ImageWrapper = s.div`
   width: 100%;
+  display: block;
+  height: auto;
   text-align: center;
 `
 
@@ -27,14 +31,18 @@ export default () => (
 
     <RowSpace />
 
-    <Row>
-      {content.map(({ name, image }) => (
-        <Col key={name}>
-          <ImageWrapper>
-            <Image src={`static/providers/` + image} alt={name} />
-          </ImageWrapper>
-        </Col>
+    <ImageWrapper>
+      {brands.map(brand => (
+        <Image src={`/static/brands/${brand}`} alt={brand} />
       ))}
-    </Row>
+    </ImageWrapper>
   </>
 )
+
+// {content.map(({ name, image }) => (
+//   <Col key={name}>
+//     <ImageWrapper>
+//       <Image src={`static/providers/` + image} alt={name} />
+//     </ImageWrapper>
+//   </Col>
+// ))}

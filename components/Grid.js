@@ -18,6 +18,10 @@ export const Container = styled.div`
   ${minWidth(LG)} {
     padding: 0 12%;
   }
+
+  ${({ background }) => background && (`
+    background: ${background};
+  `)}
 `
 
 export const Row = styled.div`

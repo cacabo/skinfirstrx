@@ -1,26 +1,48 @@
 import s from 'styled-components'
 
-import { Text, Title } from '../../components'
-import { BORDER } from '../../constants/colors'
+import {
+  Text,
+  Title,
+  Preheading,
+  Section,
+  Container,
+  RowSpace,
+} from '../../components'
+import { GRAY, LIGHT_GRAY, WHITE } from '../../constants/colors'
+import { SM, maxWidth } from '../../constants/widths'
 import content from './content'
+import Question from './Question'
 
-const Question = s.div`
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid ${BORDER};
+const QuestionsWrapper = s.div`
+  display: block;
+  width: 100%;
+  border-left: 1px solid ${GRAY};
+  border-right: 1px solid ${GRAY};
+  border-bottom: 1px solid ${GRAY};
 `
 
 export default () => (
-  <>
-    <Title>Have a question?</Title>
+  <Container background={LIGHT_GRAY}>
+    <Section>
+      <Preheading>FAQ</Preheading>
 
-    <Text>Take a look at the ones we often get below.</Text>
+      <Title>Have a question?</Title>
 
-    {content.map(({ title, body }) => (
-      <Question key={title}>
-        <Text><strong><i>{title}</i></strong></Text>
-        <Text>{body}</Text>
-      </Question>
-    ))}
-  </>
+      <Text>Take a look at the ones we often get below. Still have a question? Contact us and we'll be quick to reply.</Text>
+
+      <RowSpace />
+
+      <QuestionsWrapper>
+        {content.map(({ title, body }) => (
+          <Question
+            key={`faq-${title}`}
+            title={title}
+            body={body}
+          />
+        ))}
+      </QuestionsWrapper>
+
+      <RowSpace />
+    </Section>
+  </Container>
 )

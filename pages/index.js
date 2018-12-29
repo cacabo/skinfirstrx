@@ -28,29 +28,27 @@ export default () => (
 
     <Container>
       <Consultation />
+    </Container>
 
-      <Services />
+    <Services />
 
+    <Container>
       <Section>
         <Preheading>Products</Preheading>
         <Products />
       </Section>
+    </Container>
 
+    <Testimonials />
+
+    <Container>
       <Section>
         <Preheading>Our Providers</Preheading>
         <Providers />
       </Section>
-
-      <Section>
-        <Preheading>Testimonials</Preheading>
-        <Testimonials />
-      </Section>
-
-      <Section>
-        <Preheading>FAQ</Preheading>
-        <FAQ />
-      </Section>
     </Container>
+
+    <FAQ />
 
     <Contact />
   </Layout>
