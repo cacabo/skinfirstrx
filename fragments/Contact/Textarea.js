@@ -2,12 +2,9 @@ import React from 'react'
 import s from 'styled-components'
 
 import { Label } from '../../components'
-import { BORDER, BLUE } from '../../constants/colors'
+import { LIGHT_GRAY, GRAY, BLUE } from '../../constants/colors'
 
 const Textarea = s.textarea`
-  border-width: 2px;
-  border-style: solid;
-  border-color: ${BORDER};
   border-radius: 6px;
   font-size: 16px;
   padding: 0.75rem;
@@ -17,9 +14,11 @@ const Textarea = s.textarea`
   margin-bottom: 1rem;
   box-sizing: border-box;
   resize: vertical;
+  background: ${LIGHT_GRAY};
+  border: 2px solid ${LIGHT_GRAY};
 
   :hover {
-    border-color: rgba(0, 0, 0, 0.2);
+    border-color: ${GRAY};
   }
 
   :active,

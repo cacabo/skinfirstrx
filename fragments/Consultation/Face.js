@@ -23,5 +23,5 @@ const Face = s.img`
 `
 
 export default () => (
-  <Face src="/static/face.png" />
+  <Face src="/static/face.png" alt="Perfect skin starts here" />
 )

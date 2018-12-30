@@ -11,6 +11,9 @@ export const Text = s.p`
 
 export const Label = s(Text)`
   margin-bottom: 0.5rem;
+  opacity: 0.5;
+  font-size: 80%;
+  font-weight: bold;
 `
 
 export const Title = s.h1``

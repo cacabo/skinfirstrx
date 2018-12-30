@@ -13,40 +13,51 @@ import {
   Title,
   Section,
 } from '../../components'
-import { LIGHT_GRAY } from '../../constants/colors'
+import { LIGHT_GRAY, WHITE, BORDER } from '../../constants/colors'
+import Face from './Face'
 
-const Image = s.img`
-  width: 100%;
-  height: auto;
+const Wrapper = s.div`
+  min-height: 100vh;
+`
+
+const FormWrapper = s.div`
+  background: ${WHITE};
+  border: 1px solid ${BORDER};
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px ${BORDER};
 `
 
 export default () => (
-  <Container>
-    <Section>
-      <Row>
-        <Col>
-          <Preheading>Contact Us</Preheading>
+  <>
+    <Face />
+    <Container>
+      <Section>
+        <Row>
+          <Col>
+            <Wrapper>
+              <Preheading>Contact Us</Preheading>
 
-          <Title>Your best skin starts here</Title>
+              <Title>Your best skin starts here</Title>
 
-          <form>
-            <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />
-            <Input name="email" type="email" label="Email" placeholder="me@email.com" />
-            <Textarea name="body" type="text" label="Message" placeholder="..." />
-            <Input name="services" type="text" label="List services interested in" placeholder="" />
+              <FormWrapper>
+                <form>
+                  <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />
+                  <Input name="email" type="email" label="Email" placeholder="me@email.com" />
+                  <Textarea name="body" type="text" label="Message" placeholder="..." />
+                  <Input name="services" type="text" label="List services interested in" placeholder="" />
 
-            <Btn>
-              Submit
-            </Btn>
-          </form>
-        </Col>
+                  <Btn>
+                    Submit
+                  </Btn>
+                </form>
+              </FormWrapper>
+            </Wrapper>
+          </Col>
 
-        <ColSpace />
-
-        <Col>
-          <Image src="static/perfect-skin.png" alt="Perfect skin starts here" />
-        </Col>
-      </Row>
-    </Section>
-  </Container>
+          <Col />
+        </Row>
+      </Section>
+    </Container>
+  </>
 )
