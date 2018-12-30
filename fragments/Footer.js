@@ -55,6 +55,12 @@ export default () => (
             </a>
           </Text>
           <Text>
+            <strong>Email:</strong><br />
+            <a href="mailto:SkinFirstRxwellesley@gmail.com">
+              SkinFirstRxwellesley@gmail.com
+            </a>
+          </Text>
+          <Text>
             <strong>Address:</strong><br />
             79 Central Street @ Lower Level of Beauty and Main<br />
             Wellesley, MA 02482
