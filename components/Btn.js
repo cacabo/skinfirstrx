@@ -26,7 +26,7 @@ const BtnWrapper = s.a`${styles}`
 
 const BtnInput = s.input`${styles}`
 
-export const Btn = ({ href = '', children, isInput }) => {
+export const Btn = ({ href = '', children, isInput, handleClick }) => {
   if (href) {
     return (
       <Link href={href}>
@@ -47,7 +47,7 @@ export const Btn = ({ href = '', children, isInput }) => {
   }
 
   return (
-    <BtnWrapper>
+    <BtnWrapper onClick={handleClick}>
       {children}
     </BtnWrapper>
   )

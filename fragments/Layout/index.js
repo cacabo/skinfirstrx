@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
       <meta charSet="utf-8" />
 
-      <title>Skin First RX</title>
+      <title>Skin First Rx</title>
       <meta name="description" content="TODO" />
       <meta name="keywords" content="TODO" />
       <meta name="author" content="Skin First RX" />

@@ -56,8 +56,8 @@ export default () => (
           </Text>
           <Text>
             <strong>Email:</strong><br />
-            <a href="mailto:SkinFirstRxwellesley@gmail.com">
-              SkinFirstRxwellesley@gmail.com
+            <a href="mailto:SkinFirstRxWellesley@gmail.com">
+              SkinFirstRxWellesley@gmail.com
             </a>
           </Text>
           <Text>

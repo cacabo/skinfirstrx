@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'next/link'
 import s from 'styled-components'
 
@@ -13,6 +13,7 @@ import {
   Col,
   Title,
 } from '../components'
+import ConsultationModal from '../fragments/ConsultationModal/index'
 import Contact from '../fragments/Contact/index'
 import Hero from '../fragments/Hero/index'
 import Products from '../fragments/Products/index'
@@ -22,32 +23,54 @@ import Services from '../fragments/Services/index'
 import Providers from '../fragments/Providers/index'
 import Testimonials from '../fragments/Testimonials/index'
 
-export default () => (
-  <Layout>
-    <Hero />
-    
-    <Consultation />
+export default class Home extends Component {
+  constructor(props) {
+    super(props)
 
-    <Services />
+    this.state = { active: false }
 
-    <Container>
-      <Section>
-        <Preheading>Products</Preheading>
-        <Products />
-      </Section>
-    </Container>
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-    <Testimonials />
+  handleClick() {
+    const { active } = this.state
 
-    <Container>
-      <Section>
-        <Preheading>Our Providers</Preheading>
-        <Providers />
-      </Section>
-    </Container>
+    this.setState({ active: !active })
+  }
 
-    <FAQ />
+  render() {
+    const { active } = this.state
 
-    <Contact />
-  </Layout>
-)
+    return (
+      <Layout>
+        <ConsultationModal show={active} toggle={this.handleClick} />
+
+        <Hero handleClick={this.handleClick} />
+
+        <Consultation handleClick={this.handleClick} />
+
+        <Services />
+
+        <Container>
+          <Section>
+            <Preheading>Products</Preheading>
+            <Products />
+          </Section>
+        </Container>
+
+        <Testimonials />
+
+        <Container>
+          <Section>
+            <Preheading>Our Providers</Preheading>
+            <Providers />
+          </Section>
+        </Container>
+
+        <FAQ />
+
+        <Contact />
+      </Layout>
+    )
+  }
+}

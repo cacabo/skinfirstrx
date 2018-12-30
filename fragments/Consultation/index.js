@@ -21,7 +21,7 @@ const Placeholder = s.div`
   background: ${LILAC};
 `
 
-export default () => (
+export default ({ handleClick }) => (
   <>
     <Face />
 
@@ -45,7 +45,7 @@ export default () => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
             </Text>
 
-            <Btn>
+            <Btn handleClick={handleClick}>
               Get Started
             </Btn>
 

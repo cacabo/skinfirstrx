@@ -1,7 +1,7 @@
 {
   "name": "skinfirstrx",
   "version": "1.0.0",
-  "description": "website for SkinFirstRX",
+  "description": "Website for SkinFirstRx",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",

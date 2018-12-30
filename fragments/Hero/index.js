@@ -16,7 +16,7 @@ const HeroWrapper = s.div`
   background: ${SEAFOAM};
 `
 
-export default () => (
+export default ({ handleClick }) => (
   <HeroWrapper>
     <Container>
       <Section>
@@ -32,7 +32,7 @@ export default () => (
             <Text>
               Personalized, state-of-the-art skin treatment plans curated by skincare professionals
             </Text>
-            <Btn>
+            <Btn handleClick={handleClick}>
               Get Started
             </Btn>
           </Col>
