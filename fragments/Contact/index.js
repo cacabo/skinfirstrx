@@ -27,7 +27,7 @@ export default () => (
         <Col>
           <Preheading>Contact Us</Preheading>
 
-          <Title>We are here for you</Title>
+          <Title>Your best skin starts here</Title>
 
           <form>
             <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />

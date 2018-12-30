@@ -13,7 +13,7 @@ import {
   Container,
 } from '../../components'
 import { LILAC } from '../../constants/colors'
-import { maxWidth, SM } from '../../constants/widths'
+import Face from './Face'
 
 const Placeholder = s.div`
   width: 100%;
@@ -21,29 +21,9 @@ const Placeholder = s.div`
   background: ${LILAC};
 `
 
-const Face = s.img`
-  position: absolute;
-  z-index: -1;
-  max-width: 75%;
-  max-height: 100vh;
-
-  ${maxWidth(SM)} {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-    width: 100%;
-    max-width: none;
-    max-height: none;
-    height: 100%:
-  }
-`
-
 export default () => (
   <>
-    <Face src="/static/face.png" />
+    <Face />
 
     <Container>
       <Section>

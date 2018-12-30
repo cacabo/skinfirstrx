@@ -33,7 +33,7 @@ export default () => (
 
     <ImageWrapper>
       {brands.map(brand => (
-        <Image src={`/static/brands/${brand}`} alt={brand} />
+        <Image src={`/static/brands/${brand}`} alt={brand} key={brand} />
       ))}
     </ImageWrapper>
   </>

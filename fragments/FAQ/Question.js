@@ -17,6 +17,7 @@ const Top = s.div`
   cursor: pointer;
   padding: 1.5rem;
   z-index: 1;
+  position: relative;
 
   ${maxWidth(SM)} {
     padding: 1rem;
@@ -55,10 +56,10 @@ const Body = s(Text)`
 const Arrow = s.img`
   display: inline-block;
   height: 8px;
-  float: right;
   opacity: 0.25;
   margin-top: 6px;
   transition: all 0.25s ease;
+  float: right;
 
   ${({ active }) => active && `
     transform: rotateZ(-180deg);
@@ -77,7 +78,6 @@ class Question extends Component {
   }
 
   handleClick() {
-    console.log('click');
     const { active } = this.state
 
     this.setState({ active: !active })
