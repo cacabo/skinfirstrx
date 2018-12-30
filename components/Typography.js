@@ -4,6 +4,10 @@ export const Text = s.p`
   line-height: 1.5;
   margin-bottom: 1rem;
 
+  ${({ inline }) => inline && (`
+    display: inline-block;
+  `)}
+
   ${({ right }) => right && (`
     float: right;
   `)}

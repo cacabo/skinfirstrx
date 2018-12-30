@@ -1,6 +1,6 @@
 import s from 'styled-components'
 
-import { Text } from '../../components'
+import { Text, Col, Row } from '../../components'
 import { WHITE, BORDER } from '../../constants/colors'
 import Stars from './Stars'
 
@@ -12,10 +12,30 @@ const Testimonial = s.div`
   box-shadow: 0 2px 4px ${BORDER};
 `
 
+const Profile = s.div`
+  background-image: url(${({ image }) => image});
+  width: 4.5rem;
+  height: 4.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+`
+
 export default ({ name, stars, text, image }) => (
   <Testimonial key={`review-${name}`}>
-    <Text><strong>{name}</strong></Text>
-    <Text><Stars stars={stars} /> {stars}/5</Text>
+    <Row>
+      {image && (
+        <Col width="5rem">
+          <Profile image={image} />
+        </Col>
+      )}
+      <Col>
+        <Text inline><strong>{name}</strong></Text>
+        <Text><Stars stars={stars} /> {stars}/5</Text>
+      </Col>
+    </Row>
+
     <Text>"{text}"</Text>
   </Testimonial>
 )
