@@ -26,13 +26,13 @@ export default ({ name, stars, text, image }) => (
   <Testimonial key={`review-${name}`}>
     <Row>
       {image && (
-        <Col width="5rem">
+        <Col width="6rem">
           <Profile image={image} />
         </Col>
       )}
       <Col>
-        <Text inline><strong>{name}</strong></Text>
-        <Text><Stars stars={stars} /> {stars}/5</Text>
+        <Text marginTop="0.5rem" marginBottom="0.25rem"><strong>{name}</strong></Text>
+        <Text marginTop="0"><Stars stars={stars} /> {stars}/5</Text>
       </Col>
     </Row>
 

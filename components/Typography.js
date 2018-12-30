@@ -11,6 +11,14 @@ export const Text = s.p`
   ${({ right }) => right && (`
     float: right;
   `)}
+
+  ${({ marginTop }) => marginTop && (`
+    margin-top: ${marginTop};
+  `)}
+
+  ${({ marginBottom }) => marginBottom && (`
+    margin-bottom: ${marginBottom};
+  `)}
 `
 
 export const Label = s(Text)`
