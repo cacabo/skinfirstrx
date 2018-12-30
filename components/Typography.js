@@ -9,6 +9,10 @@ export const Text = s.p`
   `)}
 `
 
+export const Label = s(Text)`
+  margin-bottom: 0.5rem;
+`
+
 export const Title = s.h1``
 
 export const Subtitle = s.h3``

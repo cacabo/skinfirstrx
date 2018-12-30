@@ -25,10 +25,8 @@ import Testimonials from '../fragments/Testimonials/index'
 export default () => (
   <Layout>
     <Hero />
-
-    <Container>
-      <Consultation />
-    </Container>
+    
+    <Consultation />
 
     <Services />
 

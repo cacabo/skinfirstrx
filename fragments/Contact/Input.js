@@ -1,14 +1,14 @@
 import React from 'react'
 import s from 'styled-components'
 
-import { Text } from '../../components'
+import { Label } from '../../components'
 import { BORDER, BLUE } from '../../constants/colors'
 
 const Input = s.input`
   border-width: 2px;
   border-style: solid;
   border-color: ${BORDER};
-  border-radius: 0;
+  border-radius: 6px;
   font-size: 16px;
   padding: 0.75rem;
   width: 100%;
@@ -29,7 +29,7 @@ const Input = s.input`
 
 export default ({ name = '', label = '', placeholder = '' }) => (
   <div>
-    {label && <Text>{label}</Text>}
+    {label && <Label>{label}</Label>}
     <Input
       name={name}
       placeholder={placeholder}

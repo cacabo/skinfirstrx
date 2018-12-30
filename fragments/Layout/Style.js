@@ -12,6 +12,7 @@ export default () => (
 
     a {
       cursor: hand !important;
+      text-decoration: none !important;
     }
 
     h1,

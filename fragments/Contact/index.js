@@ -10,6 +10,7 @@ import {
   Preheading,
   Container,
   ColSpace,
+  Title,
   Section,
 } from '../../components'
 import { LIGHT_GRAY } from '../../constants/colors'
@@ -25,6 +26,8 @@ export default () => (
       <Row>
         <Col>
           <Preheading>Contact Us</Preheading>
+
+          <Title>We are here for you</Title>
 
           <form>
             <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />

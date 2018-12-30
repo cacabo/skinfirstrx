@@ -1,5 +1,5 @@
 import s from 'styled-components'
-import { Container, Row, Col } from '../components'
+import { Container, Row, Col, Text } from '../components'
 import { BORDER } from '../constants/colors'
 
 const FooterWrapper = s.div`
@@ -43,6 +43,20 @@ export default () => (
               <Icon src="/static/instagram.svg" alt="Instagram" />
             </a>
           </Links>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <Text>
+            <strong>Phone:</strong><br />
+            978-635-0107
+          </Text>
+          <Text>
+            <strong>Address:</strong><br />
+            79 Central Street @ Lower Level of Beauty and Main<br />
+            Wellesley, MA 02482
+          </Text>
         </Col>
       </Row>
     </Container>
