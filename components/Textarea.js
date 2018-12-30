@@ -1,10 +1,10 @@
 import React from 'react'
 import s from 'styled-components'
 
-import { Label } from '../../components'
-import { LIGHT_GRAY, GRAY, BLUE, WHITE } from '../../constants/colors'
+import { Label } from './index'
+import { LIGHT_GRAY, GRAY, BLUE, WHITE } from '../constants/colors'
 
-const Textarea = s.textarea`
+const TextareaField = s.textarea`
   border-radius: 6px;
   font-size: 16px;
   padding: 0.75rem;
@@ -28,10 +28,10 @@ const Textarea = s.textarea`
   }
 `
 
-export default ({ name = '', label = '', placeholder = '', rows=4 }) => (
+export const Textarea = ({ name = '', label = '', placeholder = '', rows = 4 }) => (
   <div>
     {label && <Label>{label}</Label>}
-    <Textarea
+    <TextareaField
       rows={rows}
       name={name}
       placeholder={placeholder}

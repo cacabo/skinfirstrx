@@ -1,8 +1,6 @@
 import s from 'styled-components'
-import { Btn } from '../../components'
 
-import Input from './Input'
-import Textarea from './Textarea'
+import { Btn, Input, Textarea } from '../../components'
 import { WHITE, BORDER } from '../../constants/colors'
 
 const FormWrapper = s.div`
@@ -16,10 +14,33 @@ const FormWrapper = s.div`
 export default () => (
   <FormWrapper>
     <form>
-      <Input name="name" type="text" label="Name" placeholder="SkinFirst Rx" />
-      <Input name="email" type="email" label="Email" placeholder="me@email.com" />
-      <Textarea name="body" type="text" label="Message" placeholder="..." />
-      <Input name="services" type="text" label="List services interested in" placeholder="" />
+      <Input
+        name="name"
+        type="text"
+        label="Name"
+        placeholder=""
+      />
+
+      <Input
+        name="email"
+        type="email"
+        label="Email"
+        placeholder="me@email.com"
+      />
+
+      <Textarea
+        name="body"
+        type="text"
+        label="Message"
+        placeholder="..."
+      />
+
+      <Input
+        name="services"
+        type="text"
+        label="List services interested in"
+        placeholder=""
+      />
 
       <Btn isInput>Submit</Btn>
     </form>

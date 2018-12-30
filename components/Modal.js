@@ -103,7 +103,7 @@ const ModalContent = styled.div`
   animation-name: ${({ show }) => (show ? slideIn : slideOut)};
   animation-duration: ${ANIMATION_DURATION};
   box-sizing: border-box;
-  padding: 10.41vh 0;
+  padding: 6vh 0;
 
   ${maxWidth(SM)} {
     width: 75%;

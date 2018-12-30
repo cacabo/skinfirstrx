@@ -1,10 +1,10 @@
 import React from 'react'
 import s from 'styled-components'
 
-import { Label } from '../../components'
-import { BLUE, GRAY, LIGHT_GRAY, WHITE } from '../../constants/colors'
+import { Label } from './index'
+import { BLUE, GRAY, LIGHT_GRAY, WHITE } from '../constants/colors'
 
-const Input = s.input`
+const InputField = s.input`
   border-radius: 6px;
   font-size: 16px;
   padding: 0.75rem;
@@ -27,10 +27,10 @@ const Input = s.input`
   }
 `
 
-export default ({ name = '', label = '', placeholder = '' }) => (
+export const Input = ({ name = '', label = '', placeholder = '' }) => (
   <div>
     {label && <Label>{label}</Label>}
-    <Input
+    <InputField
       name={name}
       placeholder={placeholder}
     />
