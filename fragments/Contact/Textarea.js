@@ -2,7 +2,7 @@ import React from 'react'
 import s from 'styled-components'
 
 import { Label } from '../../components'
-import { LIGHT_GRAY, GRAY, BLUE } from '../../constants/colors'
+import { LIGHT_GRAY, GRAY, BLUE, WHITE } from '../../constants/colors'
 
 const Textarea = s.textarea`
   border-radius: 6px;
@@ -23,6 +23,7 @@ const Textarea = s.textarea`
 
   :active,
   :focus {
+    background: ${WHITE};
     border-color: ${BLUE};
   }
 `
