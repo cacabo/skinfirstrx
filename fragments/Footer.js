@@ -50,7 +50,9 @@ export default () => (
         <Col>
           <Text>
             <strong>Phone:</strong><br />
-            978-635-0107
+            <a href="tel:978-635-0107">
+              978-635-0107
+            </a>
           </Text>
           <Text>
             <strong>Address:</strong><br />

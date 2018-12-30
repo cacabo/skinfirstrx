@@ -2,7 +2,7 @@ import s from 'styled-components'
 import Link from 'next/link'
 import { BLUE, WHITE, DARK_BLUE } from '../constants/colors'
 
-const BtnWrapper = s.a`
+const styles = `
   background: ${BLUE};
   padding: 18px 24px;
   border-radius: 6px;
@@ -22,7 +22,11 @@ const BtnWrapper = s.a`
   }
 `
 
-export const Btn = ({ href = '', children }) => {
+const BtnWrapper = s.a`${styles}`
+
+const BtnInput = s.input`${styles}`
+
+export const Btn = ({ href = '', children, isInput }) => {
   if (href) {
     return (
       <Link href={href}>
@@ -30,6 +34,15 @@ export const Btn = ({ href = '', children }) => {
           {children}
         </BtnWrapper>
       </Link>
+    )
+  }
+
+  if (isInput) {
+    return (
+      <BtnInput
+        type="submit"
+        value={children}
+      />
     )
   }
 

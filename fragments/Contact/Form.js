@@ -21,7 +21,7 @@ export default () => (
       <Textarea name="body" type="text" label="Message" placeholder="..." />
       <Input name="services" type="text" label="List services interested in" placeholder="" />
 
-      <Btn>Submit</Btn>
+      <Btn isInput>Submit</Btn>
     </form>
   </FormWrapper>
 )
