@@ -4,6 +4,7 @@ import s from 'styled-components'
 import Nav from '../Nav'
 import Footer from '../Footer'
 import Style from './Style'
+import Slick from './Slick'
 
 const App = s.div`
   width: 100%;
@@ -24,9 +25,14 @@ const Layout = ({ children }) => (
       <meta name="author" content="Skin First RX" />
 
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet" />
+
+      <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     </Head>
 
     <Style />
+
+    <Slick />
 
     <Nav />
 
