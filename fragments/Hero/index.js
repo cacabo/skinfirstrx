@@ -12,33 +12,35 @@ import {
 } from '../../components'
 import { SEAFOAM } from '../../constants/colors'
 
-const HeroWrapper = s.div`
-  background: ${SEAFOAM};
+const Image = s.div`
+  flex: 1;
+  background-image: url(static/woman.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `
 
 export default ({ handleClick }) => (
-  <HeroWrapper>
-    <Container>
-      <Section>
-        <Row>
-          <Col>
-            <Preheading>
-              Skin First RX
-            </Preheading>
+  <Row>
+    <Col>
+      <Container background={SEAFOAM} leftOnly>
+        <Section>
+          <Preheading>
+            Skin First RX
+          </Preheading>
 
-            <Title>
-              Own your skin, not the other way around
-            </Title>
-            <Text>
-              Personalized, state-of-the-art skin treatment plans curated by skincare professionals
-            </Text>
-            <Btn handleClick={handleClick}>
-              Get Started
-            </Btn>
-          </Col>
-          <Col />
-        </Row>
-      </Section>
-    </Container>
-  </HeroWrapper>
+          <Title>
+            Own your skin, not the other way around
+          </Title>
+          <Text>
+            Personalized, state-of-the-art skin treatment plans curated by skincare professionals
+          </Text>
+          <Btn handleClick={handleClick}>
+            Get Started
+          </Btn>
+        </Section>
+      </Container>
+    </Col>
+    <Image />
+  </Row>
 )

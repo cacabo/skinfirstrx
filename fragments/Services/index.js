@@ -22,7 +22,7 @@ const Placeholder = s.div`
 
 export default () => (
   <Container background={LIGHT_GRAY}>
-    <Section>
+    <Section id="services">
       <Preheading>Services</Preheading>
 
       <Title>

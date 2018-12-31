@@ -3,16 +3,6 @@ import Link from 'next/link'
 import s from 'styled-components'
 
 import Layout from '../fragments/Layout/index'
-import {
-  Container,
-  Btn,
-  Preheading,
-  Text,
-  Section,
-  Row,
-  Col,
-  Title,
-} from '../components'
 import ConsultationModal from '../fragments/ConsultationModal/index'
 import Contact from '../fragments/Contact/index'
 import Hero from '../fragments/Hero/index'
@@ -44,31 +34,13 @@ export default class Home extends Component {
     return (
       <Layout>
         <ConsultationModal show={active} toggle={this.handleClick} />
-
         <Hero handleClick={this.handleClick} />
-
         <Consultation handleClick={this.handleClick} />
-
         <Services />
-
-        <Container>
-          <Section>
-            <Preheading>Products</Preheading>
-            <Products />
-          </Section>
-        </Container>
-
+        <Products />
         <Testimonials />
-
-        <Container>
-          <Section>
-            <Preheading>Our Providers</Preheading>
-            <Providers />
-          </Section>
-        </Container>
-
+        <Providers />
         <FAQ />
-
         <Contact />
       </Layout>
     )

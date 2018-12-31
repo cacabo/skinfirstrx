@@ -22,6 +22,10 @@ export const Container = styled.div`
   ${({ background }) => background && (`
     background: ${background};
   `)}
+
+  ${({ leftOnly }) => leftOnly && (`
+    padding-right: 1rem !important;
+  `)}
 `
 
 export const Row = styled.div`

@@ -1,3 +1,5 @@
+import { BLUE, DARK_BLUE } from '../../constants/colors'
+
 export default () => (
   <style jsx global>{`
     html {
@@ -13,6 +15,17 @@ export default () => (
     a {
       cursor: hand !important;
       text-decoration: none !important;
+      color: ${BLUE};
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      color: ${DARK_BLUE};
+    }
+
+    a:visited {
+      color: ${BLUE};
     }
 
     h1,

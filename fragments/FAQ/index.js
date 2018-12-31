@@ -23,7 +23,7 @@ const QuestionsWrapper = s.div`
 
 export default () => (
   <Container background={LIGHT_GRAY}>
-    <Section>
+    <Section id="faq">
       <Preheading>FAQ</Preheading>
 
       <Title>Have a question?</Title>

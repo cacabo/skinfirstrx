@@ -1,6 +1,15 @@
 import s from 'styled-components'
 
-import { Row, Col, Title, Text, RowSpace } from '../../components'
+import {
+  Row,
+  Col,
+  Title,
+  Text,
+  RowSpace,
+  Container,
+  Section,
+  Preheading,
+} from '../../components'
 import content from './content'
 import brands from './brands'
 
@@ -20,29 +29,25 @@ const ImageWrapper = s.div`
 `
 
 export default () => (
-  <>
-    <Title>
-      Proven brands known around the world
-    </Title>
+  <Container>
+    <Section id="providers">
+      <Preheading>Our Providers</Preheading>
 
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
-    </Text>
+      <Title>
+        Proven brands known around the world
+      </Title>
 
-    <RowSpace />
+      <Text>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
+      </Text>
 
-    <ImageWrapper>
-      {brands.map(brand => (
-        <Image src={`/static/brands/${brand}`} alt={brand} key={brand} />
-      ))}
-    </ImageWrapper>
-  </>
+      <RowSpace />
+
+      <ImageWrapper>
+        {brands.map(brand => (
+          <Image src={`/static/brands/${brand}`} alt={brand} key={brand} />
+        ))}
+      </ImageWrapper>
+    </Section>
+  </Container>
 )
-
-// {content.map(({ name, image }) => (
-//   <Col key={name}>
-//     <ImageWrapper>
-//       <Image src={`static/providers/` + image} alt={name} />
-//     </ImageWrapper>
-//   </Col>
-// ))}

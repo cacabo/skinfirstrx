@@ -21,7 +21,7 @@ export default () => (
   <>
     <Face />
     <Container>
-      <Section>
+      <Section id="contact">
         <Row>
           <Col>
             <Wrapper>

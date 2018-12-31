@@ -1,26 +1,38 @@
 import content from './content'
 import Product from './Product'
-import { Row, Title, Text, RowSpace } from '../../components'
+import {
+  Row,
+  Title,
+  Text,
+  RowSpace,
+  Container,
+  Section,
+  Preheading,
+} from '../../components'
 
 export default () => (
-  <>
-    <Title>
-      Beautiful products with beautiful results
-    </Title>
+  <Container>
+    <Section id="products">
+      <Preheading>Products</Preheading>
 
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
-    </Text>
+      <Title>
+        Beautiful products with beautiful results
+      </Title>
 
-    <RowSpace />
+      <Text>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
+      </Text>
 
-    <Row>
-      {content.map((props) => (
-        <Product
-          key={props.name}
-          {...props}
-        />
-      ))}
-    </Row>
-  </>
+      <RowSpace />
+
+      <Row>
+        {content.map((props) => (
+          <Product
+            key={props.name}
+            {...props}
+          />
+        ))}
+      </Row>
+    </Section>
+  </Container>
 )

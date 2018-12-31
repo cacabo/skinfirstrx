@@ -26,7 +26,7 @@ export default ({ handleClick }) => (
     <Face />
 
     <Container>
-      <Section>
+      <Section id="consultation">
         <Row>
           <Col>
             {/* <Placeholder /> */}
