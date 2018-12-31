@@ -4,6 +4,7 @@ export const LIGHT_GRAY = '#F3F6F6'
 export const GRAY = '#E7EAEA'
 export const DARK_GRAY = '#CFD2D2'
 export const BORDER = 'rgba(0, 0, 0, 0.05)'
+export const SHADE = 'rgba(0, 0, 0, 0.375)'
 
 export const SEAFOAM = '#C8F8F2'
 export const BLUE = '#3B77D8'

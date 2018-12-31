@@ -19,6 +19,7 @@ const styles = `
   :focus,
   :active {
     background: ${DARK_BLUE};
+    color: ${WHITE};
   }
 `
 

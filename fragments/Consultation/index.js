@@ -49,7 +49,7 @@ export default ({ handleClick }) => (
               Get Started
             </Btn>
 
-            <Link href="/">
+            <Link href="#services">
               <a>
                 Learn More
               </a>

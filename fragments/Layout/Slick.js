@@ -1,4 +1,4 @@
-import { BLUE, DARK_BLUE } from '../../constants/colors'
+import { BLUE, DARK_BLUE, SHADE } from '../../constants/colors'
 
 export default () => (
   <style jsx global>{`
@@ -16,6 +16,7 @@ export default () => (
       display: block;
       top: 0;
       left: 0;
+      transition: all 0.2s ease;
     }
 
     .slick-prev {
@@ -39,6 +40,8 @@ export default () => (
       font-weight: bold;
       font-size: 18px;
       line-height: 28px;
+      box-shadow: 0px 2px 4px ${SHADE};
+      transition: all 0.2s ease;
     }
 
     .slick-prev::before {
@@ -49,9 +52,10 @@ export default () => (
       content: ">";
     }
 
-    .slick-next::before:hover,
-    .slick-prev::before:hover {
+    .slick-next:hover::before,
+    .slick-prev:hover::before {
       background: ${DARK_BLUE};
+      transform: scale(1.125, 1.125);
     }
   `}
 </style>)

@@ -2,14 +2,18 @@ import s from 'styled-components'
 
 import { Text, Col, Row } from '../../components'
 import { WHITE, BORDER } from '../../constants/colors'
+import { minWidth, SM } from '../../constants/widths'
 import Stars from './Stars'
 
 const Testimonial = s.div`
   background: ${WHITE};
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   border-radius: 4px;
   border: 1px solid ${BORDER};
-  box-shadow: 0 2px 4px ${BORDER};
+
+  ${minWidth(SM)} {
+    padding: 1rem 1.5rem;
+  }
 `
 
 const Profile = s.div`

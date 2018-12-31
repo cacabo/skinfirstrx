@@ -40,6 +40,11 @@ export const Row = styled.div`
   }
 `
 
+export const Flex = styled.div`
+  display: flex;
+  width: 100%;
+`
+
 export const Col = styled.div`
   flex: ${({ width }) => width ? 'none' : 1};
   width: ${({ width }) => width || 'auto'};

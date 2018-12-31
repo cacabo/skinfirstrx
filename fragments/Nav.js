@@ -63,12 +63,12 @@ const Icon = s.img`
   margin-top: 0.375rem;
   height: 1.25rem;
   width: auto;
-  opacity: 0.375;
+  opacity: 0.25;
 
   &:hover,
   &:focus,
   &:active {
-    opacity: 0.5;
+    opacity: 0.375;
   }
 `
 
@@ -109,10 +109,10 @@ export default () => (
           MetTrimMD
         </a>
         <a href="https://www.facebook.com/SkinFirstRx">
-          <Icon src="/static/facebook.svg" alt="Facebook" />
+          <Icon src="/static/icons/facebook.svg" alt="Facebook" />
         </a>
         <a href="https://instagram.com">
-          <Icon src="/static/instagram.svg" alt="Instagram" />
+          <Icon src="/static/icons/instagram.svg" alt="Instagram" />
         </a>
       </RightLinks>
     </NavWrapper>
