@@ -27,12 +27,20 @@ const InputField = s.input`
   }
 `
 
-export const Input = ({ name = '', label = '', placeholder = '' }) => (
+export const Input = ({
+  name = '',
+  label = '',
+  placeholder = '',
+  value = undefined,
+  handleChange = () => {},
+}) => (
   <div>
     {label && <Label>{label}</Label>}
     <InputField
       name={name}
       placeholder={placeholder}
+      value={value}
+      onChange={handleChange}
     />
   </div>
 )

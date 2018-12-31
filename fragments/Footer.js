@@ -37,6 +37,7 @@ const Copyright = s(Text)`
   opacity: 0.5;
   margin-top: 1rem;
   margin-bottom: 0;
+  font-size: 80%;
 
   ${maxWidth(SM)} {
     margin-top: 2rem;

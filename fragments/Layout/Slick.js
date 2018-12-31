@@ -57,5 +57,9 @@ export default () => (
       background: ${DARK_BLUE};
       transform: scale(1.125, 1.125);
     }
+
+    .slick-dots {
+      margin-top: 0.5rem;
+    }
   `}
 </style>)

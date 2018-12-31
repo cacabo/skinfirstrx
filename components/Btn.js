@@ -25,9 +25,29 @@ const styles = `
 
 const BtnWrapper = s.a`${styles}`
 
-const BtnInput = s.input`${styles}`
+const BtnInput = s.input`
+  ${styles}
 
-export const Btn = ({ href = '', children, isInput, handleClick }) => {
+  ${({ disabled }) => disabled && (`
+    opacity: 0.75;
+    cursor: not-allowed;
+
+    :hover,
+    :focus,
+    :active {
+      background: ${BLUE};
+      color: ${WHITE};
+    }
+  `)}
+`
+
+export const Btn = ({
+  href = '',
+  children,
+  isInput = false,
+  handleClick = () => {},
+  disabled = false,
+}) => {
   if (href) {
     return (
       <Link href={href}>
@@ -41,6 +61,7 @@ export const Btn = ({ href = '', children, isInput, handleClick }) => {
   if (isInput) {
     return (
       <BtnInput
+        disabled={disabled}
         type="submit"
         value={children}
       />

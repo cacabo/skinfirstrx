@@ -28,13 +28,22 @@ const TextareaField = s.textarea`
   }
 `
 
-export const Textarea = ({ name = '', label = '', placeholder = '', rows = 4 }) => (
+export const Textarea = ({
+  name = '',
+  label = '',
+  placeholder = '',
+  rows = 4,
+  value = undefined,
+  handleChange = () => {},
+}) => (
   <div>
     {label && <Label>{label}</Label>}
     <TextareaField
       rows={rows}
       name={name}
       placeholder={placeholder}
+      value={value}
+      onChange={handleChange}
     />
   </div>
 )
