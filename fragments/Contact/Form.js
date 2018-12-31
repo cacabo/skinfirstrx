@@ -3,6 +3,7 @@ import s from 'styled-components'
 
 import { Btn, Input, Textarea } from '../../components'
 import { WHITE, BORDER } from '../../constants/colors'
+import { isValidEmail } from '../../helpers'
 
 const FormWrapper = s.div`
   background: ${WHITE};
@@ -11,11 +12,6 @@ const FormWrapper = s.div`
   border-radius: 4px;
   box-shadow: 0px 2px 4px ${BORDER};
 `
-
-const isValidEmail = email => {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return re.test(String(email).toLowerCase())
-}
 
 export default class Form extends Component {
   constructor(props) {
@@ -60,7 +56,6 @@ export default class Form extends Component {
       return true
     }
 
-
     return false
   }
 
@@ -76,6 +71,7 @@ export default class Form extends Component {
     if (!e) return
     else if (this.isDisabled()) return
 
+    e.preventDefault()
     console.log('SUBMITTED')
   }
 
@@ -89,7 +85,7 @@ export default class Form extends Component {
 
     return (
       <FormWrapper>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <Input
             name="name"
             type="text"
