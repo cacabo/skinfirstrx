@@ -8,8 +8,11 @@ import {
   Col,
   ColSpace,
   Btn,
+  ErrorMessage,
+  SuccessMessage,
 } from '../../components'
 import { isValidEmail } from '../../helpers'
+import { CONSULTATION_PATH } from '../../constants/routes'
 
 export default class Form extends Component {
   constructor(props) {
@@ -21,6 +24,9 @@ export default class Form extends Component {
       phone: '',
       zip: '',
       body: '',
+      error: '',
+      pending: false,
+      success: false,
     }
 
     this.isDisabled = this.isDisabled.bind(this)
@@ -35,7 +41,11 @@ export default class Form extends Component {
       phone,
       zip,
       body,
+      error,
+      pending,
     } = this.state
+
+    if (pending) return true
 
     // Ensure all input is present
     if (!name || !email || !phone || !zip || !body) {
@@ -57,6 +67,10 @@ export default class Form extends Component {
       return true
     }
 
+    if (error) {
+      this.setState({ error: '' })
+    }
+
     return false
   }
 
@@ -74,17 +88,32 @@ export default class Form extends Component {
 
     e.preventDefault()
 
+    this.setState({ pending: true })
+
+    const body = JSON.stringify(Object.assign({}, this.state))
+
     const req = {
       method: 'POST',
-      body: this.state,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body,
     }
 
-    console.log(req)
-
-    fetch('/contact', req)
+    fetch(CONSULTATION_PATH, req)
       .then(r => r.json())
       .then(data => {
-        console.log(data);
+        this.setState({
+          success: true,
+          pending: false,
+        })
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message || 'There was an error submitting your response. Please check the form and try again.',
+          pending: false,
+        })
       })
   }
 
@@ -95,10 +124,20 @@ export default class Form extends Component {
       phone,
       zip,
       body,
+      error,
+      success,
+      pending,
     } = this.state
+
+    if (success) {
+      return (
+        <SuccessMessage message="Your consultation has successfully been requested." />
+      )
+    }
 
     return (
       <form onSubmit={this.handleSubmit}>
+        <ErrorMessage message={error} />
         <Row>
           <Col>
             <Input
@@ -156,7 +195,9 @@ export default class Form extends Component {
           handleChange={this.handleChange}
         />
 
-        <Btn isInput disabled={this.isDisabled()}>Schedule</Btn>
+        <Btn isInput disabled={this.isDisabled()}>
+          {pending ? 'Scheduling...' : 'Schedule'}
+        </Btn>
       </form>
     )
   }

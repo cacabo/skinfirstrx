@@ -8,6 +8,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const routes = require('./constants/routes')
+
 app.prepare()
   .then(() => {
     const { SENDGRID_API_KEY, EMAIL } = process.env
@@ -26,11 +28,47 @@ app.prepare()
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-    server.get('/', (req, res) => {
-      return app.render(req, res, '/', req.query)
+    server.get(routes.HOME_PATH, (req, res) => {
+      return app.render(req, res, routes.HOME_PATH, req.query)
     })
 
-    server.post('/contact', (req, res) => {
+    server.post(routes.CONSULTATION_PATH, (req, res) => {
+      if (!req || !req.body) return
+      const {
+        name,
+        email,
+        phone,
+        zip,
+        body,
+      } = req.body
+
+      const msg = {
+        to: EMAIL,
+        from: email,
+        subject: 'Consultation request via skinfirstrx.com',
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nZip: ${zip}\n\n${body}`,
+        html: `
+          <p>
+            <strong>Name:</strong> ${name}><br />
+            <strong>Email:</strong> ${email}<br />
+            <strong>Phone:</strong> ${phone}<br />
+            <strong>Zip:</strong> ${zip}<br />
+          </p>
+          <p>${body}</p>
+        `,
+      }
+
+      sgMail.send(msg)
+        .then(() => res.send({ success: true }))
+        .catch(sgError => {
+          res.send({
+            success: false,
+            error: sgError.message || 'There was an error sending the email',
+          })
+        })
+    })
+
+    server.post(routes.CONTACT_PATH, (req, res) => {
       console.log(req.body)
 
       const msg = {
@@ -49,11 +87,11 @@ app.prepare()
       //     res.send({
       //       success: false,
       //       error: sendgridError.message || 'There was an error sending the email',
-      //     });
+      //     })
       //   })
     })
 
-    server.get('*', (req, res) => {
+    server.get(routes.WILDCARD_PATH, (req, res) => {
       return handle(req, res)
     })
 
