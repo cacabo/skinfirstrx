@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styled, { keyframes } from 'styled-components'
-import { maxWidth, SM } from '../constants/widths'
+import styled, { keyframes, css } from 'styled-components'
+import { maxWidth, SM, MD } from '../constants/widths'
 import { WHITE, DARK_GRAY, LIGHT_GRAY_ALPHA } from '../constants/colors'
 
 const Z_INDEX = 1400
 const WRAPPER_SHADE = LIGHT_GRAY_ALPHA
 const ANIMATION_DURATION = '0.3s'
+
+// Width of the mobile as a percent for certain screen sizes
+const DESKTOP_WIDTH = 50
+const TABLET_WIDTH = 75
+const MOBILE_WIDTH = 87.5
 
 const fadeIn = keyframes`
   0% {
@@ -32,19 +37,19 @@ const fadeOut = keyframes`
   }
 `
 
-const slideIn = keyframes`
+const slideIn = (width) => keyframes`
   0% {
     margin-left: 100%;
   }
 
   100% {
-    margin-left: 50%;
+    margin-left: ${100 - width}%;
   }
 `
 
-const slideOut = keyframes`
+const slideOut = (width) => keyframes`
   0% {
-    margin-left: 50%;
+    margin-left: ${100 - width}%;
   }
 
   100% {
@@ -52,24 +57,10 @@ const slideOut = keyframes`
   }
 `
 
-const slideInMobile = keyframes`
-  0% {
-    margin-left: 100%;
-  }
-
-  100% {
-    margin-left: 25%;
-  }
-`
-
-const slideOutMobile = keyframes`
-  0% {
-    margin-left: 25%;
-  }
-
-  100% {
-    margin-right: 100%;
-  }
+const getSizing = (width, show) => css`
+  width: ${width}%;
+  margin-left: ${show ? `${100 - width}%` : '100%'};
+  animation-name: ${show ? slideIn(width) : slideOut(width)};
 `
 
 const ModalWrapper = styled.div`
@@ -98,17 +89,18 @@ const ModalWrapper = styled.div`
 const ModalContent = styled.div`
   min-height: 100%;
   background: ${WHITE};
-  width: 50%;
-  margin-left: ${({ show }) => (show ? '50%' : '100%')};
-  animation-name: ${({ show }) => (show ? slideIn : slideOut)};
   animation-duration: ${ANIMATION_DURATION};
   box-sizing: border-box;
   padding: 6vh 0;
 
+  ${({ show }) => getSizing(DESKTOP_WIDTH, show)}
+
+  ${maxWidth(MD)} {
+    ${({ show }) => getSizing(TABLET_WIDTH, show)}
+  }
+
   ${maxWidth(SM)} {
-    width: 75%;
-    margin-left: ${({ show }) => (show ? '25%' : '100%')};
-    animation-name: ${({ show }) => (show ? slideInMobile : slideOutMobile)};
+    ${({ show }) => getSizing(MOBILE_WIDTH, show)}
   }
 `
 
