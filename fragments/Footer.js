@@ -1,5 +1,5 @@
 import s from 'styled-components'
-import { Container, Row, Col, Text, Flex } from '../components'
+import { Container, Row, Col, Text, Flex, ColSpace } from '../components'
 import { BORDER } from '../constants/colors'
 import { maxWidth, SM } from '../constants/widths'
 
@@ -61,6 +61,8 @@ export default () => (
           <Logo src="/static/logo.png" alt="Skin First RX" />
         </Col>
 
+        <ColSpace width="1rem" />
+
         <Col>
           <Header>Contact</Header>
           <Text>
@@ -78,6 +80,8 @@ export default () => (
             Wellesley, MA 02482
           </Text>
         </Col>
+
+        <ColSpace width="1rem" />
 
         <Col>
           <Header>Social</Header>

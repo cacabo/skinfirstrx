@@ -84,14 +84,15 @@ export default class Form extends Component {
 
   handleSubmit(e) {
     if (!e) return
-    else if (this.isDisabled()) return
+    else if (this.isDisabled()) {
+      this.setState({ error: 'There was an error with your input. Please check the form and try again' })
+      return
+    }
 
     e.preventDefault()
-
     this.setState({ pending: true })
 
     const body = JSON.stringify(Object.assign({}, this.state))
-
     const req = {
       method: 'POST',
       headers: {
@@ -103,9 +104,10 @@ export default class Form extends Component {
 
     fetch(CONSULTATION_PATH, req)
       .then(r => r.json())
-      .then(data => {
+      .then(({ success = false, error = '' }) => {
         this.setState({
-          success: true,
+          success,
+          error,
           pending: false,
         })
       })

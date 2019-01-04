@@ -6,6 +6,8 @@ import {
   LIGHT_BLUE,
   BLUE,
   DARK_BLUE,
+  BLUE_BORDER,
+  RED_BORDER,
 } from '../constants/colors'
 
 import { Text } from './index'
@@ -22,13 +24,13 @@ const Wrapper = s.div`
 const ErrorWrapper = s(Wrapper)`
   background: ${PINK};
   color: ${RED};
-  border-color: ${RED};
+  border-color: ${RED_BORDER};
 `
 
 const SuccessWrapper = s(Wrapper)`
   background: ${LIGHT_BLUE};
   color: ${DARK_BLUE};
-  border-color: ${BLUE};
+  border-color: ${BLUE_BORDER};
 `
 
 export const ErrorMessage = ({ message = '' }) => {

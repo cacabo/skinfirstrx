@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import fetch from 'isomorphic-unfetch'
 import s from 'styled-components'
 
-import { Btn, Input, Textarea } from '../../components'
+import {
+  Btn,
+  Input,
+  Textarea,
+  SuccessMessage,
+  ErrorMessage,
+} from '../../components'
 import { WHITE, BORDER } from '../../constants/colors'
 import { isValidEmail } from '../../helpers'
+import { CONTACT_PATH } from '../../constants/routes'
 
 const FormWrapper = s.div`
   background: ${WHITE};
@@ -22,6 +30,8 @@ export default class Form extends Component {
       email: '',
       body: '',
       services: '',
+      success: false,
+      error: '',
     }
 
     this.isDisabled = this.isDisabled.bind(this)
@@ -69,10 +79,39 @@ export default class Form extends Component {
 
   handleSubmit(e) {
     if (!e) return
-    else if (this.isDisabled()) return
+    else if (this.isDisabled()) {
+      this.setState({ error: 'There was an error with your input. Please check the form and try again' })
+      return
+    }
 
     e.preventDefault()
-    console.log('SUBMITTED')
+    this.setState({ pending: true })
+
+    const body = JSON.stringify(Object.assign({}, this.state))
+    const req = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body,
+    }
+
+    fetch(CONTACT_PATH, req)
+      .then(r => r.json())
+      .then(({ success = false, error = '' }) => {
+        this.setState({
+          success,
+          error,
+          pending: false,
+        })
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message || 'There was an error submitting your response. Please check the form and try again.',
+          pending: false,
+        })
+      })
   }
 
   render() {
@@ -81,11 +120,22 @@ export default class Form extends Component {
       email,
       body,
       services,
+      pending,
+      error,
+      success,
     } = this.state
+
+    if (success) {
+      return (
+        <SuccessMessage message="Your contact request was sent successfully. We will get back to you as soon as possible!" />
+      )
+    }
 
     return (
       <FormWrapper>
         <form onSubmit={this.handleSubmit}>
+          <ErrorMessage message={error} />
+
           <Input
             name="name"
             type="text"
@@ -122,7 +172,9 @@ export default class Form extends Component {
             handleChange={this.handleChange}
           />
 
-          <Btn isInput disabled={this.isDisabled()}>Submit</Btn>
+          <Btn isInput disabled={this.isDisabled()}>
+            {pending ? 'Submitting...' : 'Submit'}
+          </Btn>
         </form>
       </FormWrapper>
     )

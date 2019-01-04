@@ -12,8 +12,8 @@ const routes = require('./constants/routes')
 
 app.prepare()
   .then(() => {
+    // Configure sendgrid for sending emails
     const { SENDGRID_API_KEY, EMAIL } = process.env
-
     if (!SENDGRID_API_KEY) {
       console.log('Missing SENDGRID_API_KEY')
       return
@@ -28,12 +28,21 @@ app.prepare()
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
+    // Home page
     server.get(routes.HOME_PATH, (req, res) => {
       return app.render(req, res, routes.HOME_PATH, req.query)
     })
 
+    // Request for a free consultation
     server.post(routes.CONSULTATION_PATH, (req, res) => {
-      if (!req || !req.body) return
+      if (!req || !req.body) {
+        res.send({
+          success: false,
+          error: 'Improper request.',
+        })
+        return
+      }
+
       const {
         name,
         email,
@@ -42,6 +51,28 @@ app.prepare()
         body,
       } = req.body
 
+      if (!name || !email || !phone || !zip || !body) {
+        res.send({
+          success: false,
+          error: 'Improper request.',
+        })
+        return
+      }
+
+      if (
+        name.length > 200
+        || email.length > 200
+        || phone.length > 20
+        || zip.length != 6
+        || body.length > 5000
+      ) {
+        res.send({
+          success: false,
+          error: 'Improper request.',
+        })
+        return
+      }
+
       const msg = {
         to: EMAIL,
         from: email,
@@ -49,10 +80,10 @@ app.prepare()
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nZip: ${zip}\n\n${body}`,
         html: `
           <p>
-            <strong>Name:</strong> ${name}><br />
+            <strong>Name:</strong> ${name}<br />
             <strong>Email:</strong> ${email}<br />
             <strong>Phone:</strong> ${phone}<br />
-            <strong>Zip:</strong> ${zip}<br />
+            <strong>Zip code:</strong> ${zip}<br />
           </p>
           <p>${body}</p>
         `,
@@ -68,27 +99,67 @@ app.prepare()
         })
     })
 
+    // Request to contact
     server.post(routes.CONTACT_PATH, (req, res) => {
-      console.log(req.body)
+      if (!req || !req.body) {
+        res.send({
+          success: false,
+          error: 'Improper request.',
+        })
+        return
+      }
+
+      const {
+        name,
+        email,
+        body,
+        services,
+      } = req.body
+
+      if (!name || !email || !body || !services) {
+        res.send({
+          success: false,
+          error: 'Improper request.',
+        })
+        return
+      }
+
+      if (
+        name.length > 200
+        || email.length > 200
+        || body.length > 5000
+        || services.length > 2000
+      ) {
+        res.send({
+          success: false,
+          error: 'Improper request.',
+        })
+        return
+      }
 
       const msg = {
         to: EMAIL,
-        from: 'test@example.com',
-        subject: 'Sending with SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        from: email,
+        subject: 'Contact request via skinfirstrx.com',
+        text: `Name: ${name}\nEmail: ${email}\nServices interested in: ${services}\n\n${body}`,
+        html: `
+        <p>
+          <strong>Name:</strong> ${name}<br />
+          <strong>Email:</strong> ${email}<br />
+          <strong>Services interested in:</strong> ${services}<br />
+        </p>
+        <p>${body}</p>
+        `,
       }
 
-      res.send(msg)
-
-      // sgMail.send(msg)
-      //   .then(() => res.send({ success: true }))
-      //   .catch(sendgridError => {
-      //     res.send({
-      //       success: false,
-      //       error: sendgridError.message || 'There was an error sending the email',
-      //     })
-      //   })
+      sgMail.send(msg)
+        .then(() => res.send({ success: true }))
+        .catch(sgError => {
+          res.send({
+            success: false,
+            error: sgError.message || 'There was an error sending the email',
+          })
+        })
     })
 
     server.get(routes.WILDCARD_PATH, (req, res) => {
