@@ -14,6 +14,7 @@ const Testimonial = s.div`
   padding: 1rem;
   border-radius: 4px;
   border: 1px solid ${BORDER};
+  box-shadow: 0px 1px 4px ${BORDER};
 
   ${minWidth(SM)} {
     padding: 1rem 1.5rem;

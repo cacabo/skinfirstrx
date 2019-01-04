@@ -15,6 +15,8 @@ import Testimonial from './Testimonial'
 
 const Wrapper = s.div`
   background: ${LIGHT_GRAY};
+  display: block;
+  width: 100%;
 `
 
 const settings = {
