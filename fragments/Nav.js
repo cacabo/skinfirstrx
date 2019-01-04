@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Container } from '../components'
 import { BORDER, WHITE } from '../constants/colors'
+import { maxWidth, MD, SM, LG } from '../constants/widths'
 
 const INNER_HEIGHT = '2rem'
 const NAV_HEIGHT = '2.5rem'
@@ -55,8 +56,20 @@ const Links = s.div`
   }
 `
 
+// ${maxWidth('1024px')} {
+//   display: none;
+// }
+
 const RightLinks = s(Links)`
   margin-left: auto;
+
+  ${maxWidth(LG)} {
+    display: none;
+  }
+
+  ${maxWidth(MD)} {
+    display: inline-block;
+  }
 `
 
 const Icon = s.img`
