@@ -2,6 +2,7 @@ const express = require('express')
 const next = require('next')
 const sgMail = require('@sendgrid/mail')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -9,6 +10,8 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 const routes = require('./constants/routes')
+
+// TODO error page
 
 app.prepare()
   .then(() => {
@@ -24,7 +27,9 @@ app.prepare()
 
     const server = express()
 
+    // Middleware
     server.use(bodyParser.json())
+    server.use(express.static(path.join(__dirname, 'public')));
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 

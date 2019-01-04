@@ -45,7 +45,13 @@ export default class Form extends Component {
       email,
       body,
       services,
+      pending,
     } = this.state
+
+    // Connot resubmit while request is being sent
+    if (pending) {
+      return true
+    }
 
     // Ensure all input is present
     if (!name || !email || !body || !services) {
@@ -57,7 +63,7 @@ export default class Form extends Component {
       name.length > 200
       || email.length > 200
       || body.length > 5000
-      || services.length > 500
+      || services.length > 1000
     ) {
       return true
     }
