@@ -1,7 +1,11 @@
 import s from 'styled-components'
 
-import { Col, Text } from '../../components'
+import { Text } from '../../components'
 import { BORDER } from '../../constants/colors'
+
+const Wrapper = s.div`
+  padding: 0 1rem;
+`
 
 const Product = s.div`
   padding: calc(1rem + 2.5%);
@@ -26,7 +30,7 @@ const Image = s.img`
 `
 
 export default ({ name, retail, description, image }) => (
-  <Col width="calc(50% - 0.75rem)" flex>
+  <Wrapper>
     <Product>
       {image && (
         <ImageWrapper>
@@ -38,5 +42,5 @@ export default ({ name, retail, description, image }) => (
       <Text><strong>{name}</strong></Text>
       <Text>{description}</Text>
     </Product>
-  </Col>
+  </Wrapper>
 )

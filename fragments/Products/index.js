@@ -1,3 +1,5 @@
+import s from 'styled-components'
+
 import content from './content'
 import Product from './Product'
 import {
@@ -8,11 +10,22 @@ import {
   Container,
   Section,
   Preheading,
+  Slider,
 } from '../../components'
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  centerMode: true,
+}
+
 export default () => (
-  <Container>
-    <Section id="products">
+
+  <Section id="products">
+    <Container>
       <Preheading>Products</Preheading>
 
       <Title>
@@ -24,15 +37,15 @@ export default () => (
       </Text>
 
       <RowSpace />
+    </Container>
 
-      <Row>
-        {content.map((props) => (
-          <Product
-            key={props.name}
-            {...props}
-          />
-        ))}
-      </Row>
-    </Section>
-  </Container>
+    <Slider settings={settings}>
+      {content.map(props => (
+        <Product
+          key={props.name}
+          {...props}
+        />
+      ))}
+    </Slider>
+  </Section>
 )

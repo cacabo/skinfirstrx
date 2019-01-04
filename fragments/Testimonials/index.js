@@ -1,4 +1,4 @@
-import Slider from 'react-slick'
+import s from 'styled-components'
 
 import {
   Title,
@@ -7,31 +7,37 @@ import {
   Container,
   Section,
   Preheading,
+  Slider,
 } from '../../components'
 import { LIGHT_GRAY } from '../../constants/colors'
 import reviews from './reviews'
 import Testimonial from './Testimonial'
+
+const Wrapper = s.div`
+  background: ${LIGHT_GRAY};
+`
 
 const settings = {
   dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 1,
+  centerMode: true,
 }
 
 export default () => (
-  <Container background={LIGHT_GRAY}>
+  <Wrapper>
     <Section id="testimonials">
-      <Preheading>Testimonials</Preheading>
-      <Title>Our customers love us</Title>
-      <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.</Text>
+      <Container>
+        <Preheading>Testimonials</Preheading>
+        <Title>Our customers love us</Title>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.</Text>
 
-      <RowSpace />
-      <RowSpace />
-      <RowSpace />
+        <RowSpace />
+      </Container>
 
-      <Slider {...settings}>
+      <Slider settings={settings}>
         {reviews.map(({ name, image, text, stars }) => (
           <Testimonial
             name={name}
@@ -43,5 +49,5 @@ export default () => (
         ))}
       </Slider>
     </Section>
-  </Container>
+  </Wrapper>
 )
