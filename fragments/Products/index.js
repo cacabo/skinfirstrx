@@ -12,14 +12,31 @@ import {
   Preheading,
   Slider,
 } from '../../components'
+import { SM, MD, LG } from '../../constants/widths'
 
 const settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 2,
+  slidesToShow: 3,
   slidesToScroll: 1,
   centerMode: true,
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 }
 
 export default () => (

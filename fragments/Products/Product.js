@@ -4,13 +4,12 @@ import { Text } from '../../components'
 import { BORDER } from '../../constants/colors'
 
 const Wrapper = s.div`
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 `
 
 const Product = s.div`
-  padding: calc(1rem + 2.5%);
+  padding: 1rem calc(1rem + 2.5%) 0.5rem calc(1rem + 2.5%);
   border: 1px solid ${BORDER};
-  margin-bottom: 1.5rem;
   box-shadow: 0px 1px 4px ${BORDER};
   border-radius: 4px;
   flex: 1;
