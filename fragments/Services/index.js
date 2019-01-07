@@ -18,7 +18,7 @@ const Results = s.div`
   display: flex;
   margin-bottom: 2rem;
   border: 8px solid ${BLUE};
-  border-radius: 4px;
+  border-radius: 0;
 `
 
 const ResultsImg = s.div`

@@ -9,8 +9,13 @@ import {
   Container,
   Section,
   Preheading,
+  ColSpace,
 } from '../../components'
 import brands from './brands'
+import { BLUE, WHITE } from '../../constants/colors'
+import { maxWidth, SM } from '../../constants/widths'
+
+const BORDER_WIDTH = '12px'
 
 const Image = s.img`
   width: auto;
@@ -25,6 +30,43 @@ const ImageWrapper = s.div`
   display: block;
   height: auto;
   text-align: center;
+`
+
+const SpotlightImg = s.img`
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin-top: 1rem;
+
+  ${maxWidth(SM)} {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+`
+
+const SpotlightWrapper = s.div`
+  border: ${BORDER_WIDTH} solid ${BLUE};
+  box-sizing: border-box;
+  margin: 0 2rem;
+`
+
+const Spotlight = s.div`
+  margin: 1rem calc(-2rem - ${BORDER_WIDTH});
+  padding: 1rem 0;
+`
+
+const ImgCol = s(Col)`
+  width: 20%;
+  flex: none;
+
+  ${maxWidth(SM)} {
+    width: 50%;
+  }
+`
+
+const TextCol = s(Col)`
+  background: ${WHITE};
+  padding: 1rem 0;
 `
 
 export default () => (
@@ -47,6 +89,32 @@ export default () => (
           <Image src={`/static/brands/${brand}`} alt={brand} key={brand} />
         ))}
       </ImageWrapper>
+
+      <RowSpace />
+      <RowSpace />
+      <RowSpace />
+
+      <SpotlightWrapper>
+        <Spotlight>
+          <Row>
+            <ImgCol>
+              <SpotlightImg src="/static/emily.jpg" alt="emily" />
+            </ImgCol>
+
+            <ColSpace />
+
+            <TextCol>
+              <Title marginTop="0">
+                Meet Emily
+              </Title>
+
+              <Text>
+                Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire of 2015. Her passion to help people  then led her to to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.
+              </Text>
+            </TextCol>
+          </Row>
+        </Spotlight>
+      </SpotlightWrapper>
     </Section>
   </Container>
 )

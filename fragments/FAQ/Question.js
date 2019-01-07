@@ -56,8 +56,7 @@ const Body = s(Text)`
 const Arrow = s.img`
   display: inline-block;
   height: 8px;
-  opacity: 0.25;
-  margin-top: 6px;
+  margin-top: 8px;
   transition: all 0.25s ease;
   float: right;
 
@@ -93,7 +92,7 @@ class Question extends Component {
           <QuestionText>
             <strong>{title}</strong>
 
-            <Arrow src="/static/icons/arrow.svg" active={active} />
+            <Arrow src="/static/icons/chevron-down.svg" active={active} />
           </QuestionText>
         </Top>
 

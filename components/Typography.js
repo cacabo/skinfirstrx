@@ -32,7 +32,11 @@ export const Label = s(Text)`
   font-weight: bold;
 `
 
-export const Title = s.h1``
+export const Title = s.h1`
+  ${({ marginTop }) => marginTop && `
+    margin-top: ${marginTop};
+  `}
+`
 
 export const Subtitle = s.h3``
 
