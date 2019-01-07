@@ -10,7 +10,6 @@ import {
   Section,
   Preheading,
 } from '../../components'
-import content from './content'
 import brands from './brands'
 
 const Image = s.img`
@@ -38,7 +37,7 @@ export default () => (
       </Title>
 
       <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
+        We are proud to be a provider of these global brands.
       </Text>
 
       <RowSpace />

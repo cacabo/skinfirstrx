@@ -21,6 +21,10 @@ export const Text = s.p`
   `)}
 `
 
+export const SmallText = s(Text)`
+  font-size: 80%;
+`
+
 export const Label = s(Text)`
   margin-bottom: 0.5rem;
   opacity: 0.5;

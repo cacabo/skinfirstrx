@@ -1,6 +1,6 @@
 import s from 'styled-components'
 
-import { Text } from '../../components'
+import { Text, SmallText } from '../../components'
 import { BORDER } from '../../constants/colors'
 
 const Wrapper = s.div`
@@ -26,6 +26,7 @@ const Image = s.img`
   height: auto;
   display: inline-block;
   text-align: center;
+  margin: 0 auto;
 `
 
 export default ({ name, retail, description, image }) => (
@@ -39,7 +40,7 @@ export default ({ name, retail, description, image }) => (
 
       <Text right>${retail}</Text>
       <Text><strong>{name}</strong></Text>
-      <Text>{description}</Text>
+      <SmallText>{description}</SmallText>
     </Product>
   </Wrapper>
 )

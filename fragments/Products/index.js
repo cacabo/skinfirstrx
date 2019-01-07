@@ -50,16 +50,16 @@ export default () => (
       </Title>
 
       <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
+        Learn more about the products we have to offer. Ask about our other products when you call or visit.
       </Text>
 
       <RowSpace />
     </Container>
 
     <Slider settings={settings}>
-      {content.map(props => (
+      {content.map((props, idx) => (
         <Product
-          key={props.name}
+          key={props.name.replace(/\s+/g, '-').toLowerCase() + '-' + idx}
           {...props}
         />
       ))}

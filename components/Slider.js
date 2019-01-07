@@ -28,6 +28,7 @@ const Arrow = s.div`
   transition: all 0.2s ease;
   opacity: 1;
   transition: all 0.2s ease;
+  cursor: pointer;
 
   &:hover {
     background: ${DARK_BLUE};

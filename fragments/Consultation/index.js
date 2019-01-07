@@ -38,11 +38,11 @@ export default ({ handleClick }) => (
             <Preheading>Free Consultation</Preheading>
 
             <Title>
-              Leave your fears behind with a free consultation
+              Don't delay your healthy skin, call for a free consult today
             </Title>
 
             <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.
+              We offer free consults. This is a risk free way to see what we can offer and how we can help you achieve your skin goals.
             </Text>
 
             <Btn handleClick={handleClick}>

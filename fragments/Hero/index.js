@@ -33,7 +33,7 @@ export default ({ handleClick }) => (
             Own your skin, not the other way around
           </Title>
           <Text>
-            Personalized, state-of-the-art skin treatment plans curated by skincare professionals
+            Let SkinFirstRx help you put your skin first. Our professional aesthetic nurses can provide expert consultation. We will work with you on a personalized plan for your skin care needs. We use our professional products to help delay and reverse signs of aging. Our products are based in science and trusted by millions to help keep their skin healthy, smooth and resilient.
           </Text>
           <Btn handleClick={handleClick}>
             Get Started
