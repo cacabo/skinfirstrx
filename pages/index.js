@@ -40,7 +40,7 @@ export default class Home extends Component {
         <Products />
         <Testimonials />
         <Providers />
-        <FAQ />
+        {/* <FAQ /> */}
         <Contact />
       </Layout>
     )

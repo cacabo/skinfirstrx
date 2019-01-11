@@ -162,9 +162,9 @@ export default class Nav extends Component {
             <a href="#providers" onClick={this.handleClickLink}>
               Providers
             </a>
-            <a href="#faq" onClick={this.handleClickLink}>
+            {/* <a href="#faq" onClick={this.handleClickLink}>
               FAQ
-            </a>
+            </a> */}
             <a href="#contact" onClick={this.handleClickLink}>
               Contact
             </a>
