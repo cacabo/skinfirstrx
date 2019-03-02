@@ -110,7 +110,7 @@ export default () => (
               </Title>
 
               <Text>
-                {'Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire of 2015. Her passion to help people then led her to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.'}
+                {'Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire in 2015. Her passion to help people then led her to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.'}
               </Text>
             </TextCol>
           </Row>

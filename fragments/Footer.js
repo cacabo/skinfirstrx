@@ -16,6 +16,7 @@ const FooterWrapper = s.div`
   padding: 2rem 0 1rem 0;
   background: white;
   border-top: 1px solid ${BORDER};
+  font-size: 80%;
 `
 
 const Logo = s.img`
@@ -84,7 +85,9 @@ export default () => (
             </a>
           </Text>
           <Text>
-            79 Central Street @ Lower Level of Beauty and Main
+            79 Central Street
+            <br />
+            Lower Level of Beauty and Main
             <br />
             Wellesley, MA 02482
           </Text>

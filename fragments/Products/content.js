@@ -30,7 +30,7 @@ export default [
     image: 'retinol-complex.jpg',
   },
   {
-    name: 'Lumvive',
+    name: 'Lumivive',
     retail: 265,
     description: 'This two step system gives your skin more power the resist the environment\'s attack during the day and recover itself overnight. With full atmospheric protection against blue light and pollution, you may see truly radiant skin in as few as 14 days. Appropriate for all skin types and tones. System includes: Lumivive Day Damage Defense Serum and Lumivive Night Revitalize Repair Complex.',
     image: 'lumvive.jpg',
