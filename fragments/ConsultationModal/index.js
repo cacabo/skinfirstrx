@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Modal,
   ModalContainer,
@@ -6,7 +8,7 @@ import {
 } from '../../components'
 import Form from './Form'
 
-export default ({ show, toggle }) => (
+const ConsultationModal = ({ show, toggle }) => (
   <Modal show={show} toggle={toggle}>
     <ModalContainer>
       <Title>Schedule a free consultation</Title>
@@ -16,3 +18,14 @@ export default ({ show, toggle }) => (
     </ModalContainer>
   </Modal>
 )
+
+ConsultationModal.defaultProps = {
+  show: false,
+}
+
+ConsultationModal.propTypes = {
+  show: PropTypes.bool,
+  toggle: PropTypes.func.isRequired,
+}
+
+export default ConsultationModal

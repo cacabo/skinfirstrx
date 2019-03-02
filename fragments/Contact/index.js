@@ -6,7 +6,6 @@ import {
   Col,
   Preheading,
   Container,
-  ColSpace,
   Title,
   Section,
 } from '../../components'

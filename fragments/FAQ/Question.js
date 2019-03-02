@@ -1,8 +1,9 @@
-import s from 'styled-components'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import s from 'styled-components'
 
 import { Text } from '../../components'
-import { GRAY, LIGHT_GRAY, WHITE } from '../../constants/colors'
+import { GRAY, WHITE } from '../../constants/colors'
 import { SM, maxWidth } from '../../constants/widths'
 
 const QuestionWrapper = s.div`
@@ -38,7 +39,7 @@ const Body = s(Text)`
     padding: 0 1rem;
   }
 
-  ${({ active }) => active ? (`
+  ${({ active }) => (active ? (`
     max-height: 100vh;
     opacity: 1;
     padding-bottom: 1.5rem;
@@ -50,7 +51,7 @@ const Body = s(Text)`
     max-height: 0;
     padding-bottom: 0;
     opacity: 0;
-  `)}
+  `))}
 `
 
 const Arrow = s.img`
@@ -102,6 +103,11 @@ class Question extends Component {
       </QuestionWrapper>
     )
   }
+}
+
+Question.propTypes = {
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
 }
 
 export default Question

@@ -85,8 +85,12 @@ export default class Form extends Component {
 
   handleSubmit(e) {
     if (!e) return
-    else if (this.isDisabled()) {
-      this.setState({ error: 'There was an error with your input. Please check the form and try again' })
+
+    if (this.isDisabled()) {
+      this.setState({
+        error: 'There was an error with your input. Please check the form and try again',
+      })
+
       return
     }
 
@@ -97,8 +101,8 @@ export default class Form extends Component {
     const req = {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body,
     }
@@ -112,7 +116,7 @@ export default class Form extends Component {
           pending: false,
         })
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({
           error: err.message || 'There was an error submitting your response. Please check the form and try again.',
           pending: false,

@@ -1,5 +1,6 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
-import s from 'styled-components'
 
 import {
   Row,
@@ -12,16 +13,9 @@ import {
   ColSpace,
   Container,
 } from '../../components'
-import { LILAC } from '../../constants/colors'
 import Face from './Face'
 
-const Placeholder = s.div`
-  width: 100%;
-  height: 60vh;
-  background: ${LILAC};
-`
-
-export default ({ handleClick }) => (
+const Consultation = ({ handleClick }) => (
   <>
     <Face />
 
@@ -38,11 +32,11 @@ export default ({ handleClick }) => (
             <Preheading>Free Consultation</Preheading>
 
             <Title>
-              Don't delay your healthy skin, call for a free consult today
+              {'Don\'t delay your healthy skin, call for a free consult today'}
             </Title>
 
             <Text>
-              We offer free consults. This is a risk free way to see what we can offer and how we can help you achieve your skin goals.
+              {'We offer free consults. This is a risk free way to see what we can offer and how we can help you achieve your skin goals.'}
             </Text>
 
             <Btn handleClick={handleClick}>
@@ -60,3 +54,9 @@ export default ({ handleClick }) => (
     </Container>
   </>
 )
+
+Consultation.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+}
+
+export default Consultation

@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
-import s from 'styled-components'
 
 import Layout from '../fragments/Layout/index'
 import ConsultationModal from '../fragments/ConsultationModal/index'
 import Contact from '../fragments/Contact/index'
 import Hero from '../fragments/Hero/index'
 import Products from '../fragments/Products/index'
-import FAQ from '../fragments/FAQ/index'
+// import FAQ from '../fragments/FAQ/index'
 import Consultation from '../fragments/Consultation/index'
 import Services from '../fragments/Services/index'
 import Providers from '../fragments/Providers/index'
@@ -41,6 +39,7 @@ export default class Home extends Component {
         <Products />
         <Testimonials />
         <Providers />
+        <GrowthFactors />
 
         {/* <FAQ /> */}
 

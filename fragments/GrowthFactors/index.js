@@ -5,6 +5,7 @@ import {
   Preheading,
   Title,
   Text,
+  RowSpace,
   Container,
 } from '../../components'
 import { LIGHT_GRAY } from '../../constants/colors'
@@ -28,11 +29,19 @@ export default () => (
       <Text>Growth factors...</Text>
 
       <ul>
-        {content.map(c => <li key={c}>{c}</li>)}
+        {content.map(c => (
+          <li key={c}>
+            <Text>{c}</Text>
+          </li>
+        ))}
       </ul>
 
+      <RowSpace />
+
       <Text>
-        {'Cells in aging skin make less GFs than cells in youthful skin. Regular use of skin care products with a high concentration of stable GFs is one way to support skin rejuvenation'}
+        <strong>
+          {'Cells in aging skin make less GFs than cells in youthful skin. Regular use of skin care products with a high concentration of stable GFs is one way to support skin rejuvenation'}
+        </strong>
       </Text>
     </Section>
   </Container>
