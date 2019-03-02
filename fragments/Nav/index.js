@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import s from 'styled-components'
 import Link from 'next/link'
 
-import { Container } from '../../components'
 import { BORDER, WHITE } from '../../constants/colors'
-import { maxWidth, MD, SM, LG } from '../../constants/widths'
+import { maxWidth, MD, LG } from '../../constants/widths'
 import Bars from './Bars'
 
 const INNER_HEIGHT = '2rem'
@@ -170,7 +169,11 @@ export default class Nav extends Component {
             </a>
           </Links>
           <RightLinks>
-            <a href="https://mettrimmd.com/actonma/?gclid=CjwKCAjwpeXeBRA6EiwAyoJPKl3rL26WuXVX7GW_5-ozSFdQgkdwMm6dwIc0X3w8KWwJ66d4M1lvZhoCwOoQAvD_BwE" target="_BLANK">
+            <a
+              href="https://mettrimmd.com/actonma/?gclid=CjwKCAjwpeXeBRA6EiwAyoJPKl3rL26WuXVX7GW_5-ozSFdQgkdwMm6dwIc0X3w8KWwJ66d4M1lvZhoCwOoQAvD_BwE"
+              target="_BLANK"
+              rel="noopener noreferrer"
+            >
               MetTrimMD
             </a>
             <a href="https://www.facebook.com/SkinFirstRx">

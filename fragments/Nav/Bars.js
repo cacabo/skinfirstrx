@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 import { minWidth, MD } from '../../constants/widths'
@@ -28,10 +30,16 @@ const Bar = s.span`
   margin-left: auto;
 `
 
-export default ({ handleClick }) => (
+const Bars = ({ handleClick }) => (
   <Wrapper onClick={handleClick}>
     <Bar />
     <Bar />
     <Bar />
   </Wrapper>
 )
+
+Bars.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+}
+
+export default Bars

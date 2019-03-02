@@ -1,3 +1,4 @@
+import React from 'react'
 import s from 'styled-components'
 
 import {
@@ -34,13 +35,20 @@ export default () => (
       <Container>
         <Preheading>Testimonials</Preheading>
         <Title>Tell us what you think</Title>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.</Text>
+        <Text>
+          {'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu leo ut est imperdiet tristique. In vulputate vel enim a suscipit. Aenean eleifend egestas venenatis. Maecenas imperdiet dui quam, at condimentum ante vehicula suscipit.'}
+        </Text>
 
         <RowSpace />
       </Container>
 
       <Slider settings={settings}>
-        {reviews.map(({ name, image, text, stars }) => (
+        {reviews.map(({
+          name,
+          image,
+          text,
+          stars,
+        }) => (
           <Testimonial
             name={name}
             image={image}

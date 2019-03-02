@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 import { Text, Col, Row } from '../../components'
@@ -31,7 +33,12 @@ const Profile = s.div`
   border-radius: 50%;
 `
 
-export default ({ name, stars, text, image }) => (
+const Testimonials = ({
+  name,
+  stars,
+  text,
+  image,
+}) => (
   <Wrapper>
     <Testimonial key={`review-${name}`}>
       <Row>
@@ -42,11 +49,29 @@ export default ({ name, stars, text, image }) => (
         )}
         <Col>
           <Text marginTop="0.5rem" marginBottom="0.25rem"><strong>{name}</strong></Text>
-          <Text marginTop="0"><Stars stars={stars} /> {stars}/5</Text>
+          <Text marginTop="0">
+            <Stars stars={stars} />
+            {` ${stars}/5`}
+          </Text>
         </Col>
       </Row>
 
-      <Text>"{text}"</Text>
+      <Text>
+        {`"${text}"`}
+      </Text>
     </Testimonial>
   </Wrapper>
 )
+
+Testimonials.defaultProps = {
+  image: '',
+}
+
+Testimonials.propTypes = {
+  name: PropTypes.string.isRequired,
+  stars: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+  image: PropTypes.string,
+}
+
+export default Testimonials

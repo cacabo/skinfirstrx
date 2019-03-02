@@ -1,9 +1,8 @@
-import s from 'styled-components'
+import React from 'react'
 
 import content from './content'
 import Product from './Product'
 import {
-  Row,
   Title,
   Text,
   RowSpace,
@@ -12,7 +11,6 @@ import {
   Preheading,
   Slider,
 } from '../../components'
-import { SM, MD, LG } from '../../constants/widths'
 
 const settings = {
   dots: true,
@@ -26,17 +24,17 @@ const settings = {
       breakpoint: 900,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
-      }
+        slidesToScroll: 1,
+      },
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
+        slidesToScroll: 1,
+      },
+    },
+  ],
 }
 
 export default () => (
@@ -50,17 +48,17 @@ export default () => (
       </Title>
 
       <Text>
-        Learn more about the products we have to offer. Ask about our other products when you call or visit.
+        {'Learn more about the products we have to offer. Ask about our other products when you call or visit.'}
       </Text>
 
       <RowSpace />
     </Container>
 
     <Slider settings={settings}>
-      {content.map((props, idx) => (
+      {content.map(c => (
         <Product
-          key={props.name.replace(/\s+/g, '-').toLowerCase() + '-' + idx}
-          {...props}
+          key={c.name.replace(/\s+/g, '-').toLowerCase()}
+          {...c}
         />
       ))}
     </Slider>

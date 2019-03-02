@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 const StarImage = s.img`
@@ -17,7 +19,12 @@ const Star = ({ stars, value }) => (
   )
 )
 
-export default ({ stars }) => (
+Star.propTypes = {
+  stars: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+}
+
+const Stars = ({ stars }) => (
   <>
     <Star stars={stars} value={1} />
     <Star stars={stars} value={2} />
@@ -26,3 +33,9 @@ export default ({ stars }) => (
     <Star stars={stars} value={5} />
   </>
 )
+
+Stars.propTypes = {
+  stars: PropTypes.number.isRequired,
+}
+
+export default Stars

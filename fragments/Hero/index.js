@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 import {
@@ -20,7 +22,7 @@ const Image = s.div`
   background-repeat: no-repeat;
 `
 
-export default ({ handleClick }) => (
+const Hero = ({ handleClick }) => (
   <Row>
     <Col>
       <Container background={SEAFOAM} leftOnly>
@@ -33,7 +35,7 @@ export default ({ handleClick }) => (
             Own your skin, not the other way around
           </Title>
           <Text>
-            Let SkinFirstRx help you put your skin first. Our professional aesthetic nurses can provide expert consultation. We will work with you on a personalized plan for your skin care needs. We use our professional products to help delay and reverse signs of aging. Our products are based in science and trusted by millions to help keep their skin healthy, smooth and resilient.
+            {'Let SkinFirstRx help you put your skin first. Our professional aesthetic nurses can provide expert consultation. We will work with you on a personalized plan for your skin care needs. We use our professional products to help delay and reverse signs of aging. Our products are based in science and trusted by millions to help keep their skin healthy, smooth and resilient.'}
           </Text>
           <Btn handleClick={handleClick}>
             Get Started
@@ -44,3 +46,9 @@ export default ({ handleClick }) => (
     <Image />
   </Row>
 )
+
+Hero.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+}
+
+export default Hero

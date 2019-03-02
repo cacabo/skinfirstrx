@@ -1,5 +1,13 @@
+import React from 'react'
 import s from 'styled-components'
-import { Container, Row, Col, Text, Flex, ColSpace } from '../components'
+
+import {
+  Container,
+  Row,
+  Col,
+  Text,
+  ColSpace,
+} from '../components'
 import { BORDER } from '../constants/colors'
 import { maxWidth, SM } from '../constants/widths'
 
@@ -76,7 +84,8 @@ export default () => (
             </a>
           </Text>
           <Text>
-            79 Central Street @ Lower Level of Beauty and Main<br />
+            79 Central Street @ Lower Level of Beauty and Main
+            <br />
             Wellesley, MA 02482
           </Text>
         </Col>

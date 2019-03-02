@@ -17,11 +17,14 @@ app.prepare()
   .then(() => {
     // Configure sendgrid for sending emails
     const { SENDGRID_API_KEY, EMAIL } = process.env
+
     if (!SENDGRID_API_KEY) {
-      console.log('Missing SENDGRID_API_KEY')
+      console.log('Missing SENDGRID_API_KEY') // eslint-disable-line
       return
-    } else if (!EMAIL) {
-      console.log('Missing EMAIL')
+    }
+
+    if (!EMAIL) {
+      console.log('Missing EMAIL') // eslint-disable-line
       return
     }
 
@@ -29,14 +32,14 @@ app.prepare()
 
     // Middleware
     server.use(bodyParser.json())
-    server.use(express.static(path.join(__dirname, 'public')));
+    server.use(express.static(path.join(__dirname, 'public')))
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
     // Home page
-    server.get(routes.HOME_PATH, (req, res) => {
-      return app.render(req, res, routes.HOME_PATH, req.query)
-    })
+    server.get(routes.HOME_PATH, (req, res) => (
+      app.render(req, res, routes.HOME_PATH, req.query)
+    ))
 
     // Request for a free consultation
     server.post(routes.CONSULTATION_PATH, (req, res) => {
@@ -68,7 +71,7 @@ app.prepare()
         name.length > 200
         || email.length > 200
         || phone.length > 20
-        || zip.length != 6
+        || zip.length !== 6
         || body.length > 5000
       ) {
         res.send({
@@ -96,7 +99,7 @@ app.prepare()
 
       sgMail.send(msg)
         .then(() => res.send({ success: true }))
-        .catch(sgError => {
+        .catch((sgError) => {
           res.send({
             success: false,
             error: sgError.message || 'There was an error sending the email',
@@ -159,7 +162,7 @@ app.prepare()
 
       sgMail.send(msg)
         .then(() => res.send({ success: true }))
-        .catch(sgError => {
+        .catch((sgError) => {
           res.send({
             success: false,
             error: sgError.message || 'There was an error sending the email',
@@ -167,12 +170,12 @@ app.prepare()
         })
     })
 
-    server.get(routes.WILDCARD_PATH, (req, res) => {
-      return handle(req, res)
-    })
+    server.get(routes.WILDCARD_PATH, (req, res) => (
+      handle(req, res)
+    ))
 
     server.listen(port, (err) => {
       if (err) throw err
-      console.log(`App running on http://localhost:${port} 🐣`)
+      console.log(`App running on http://localhost:${port} 🐣`) // eslint-disable-line
     })
   })
