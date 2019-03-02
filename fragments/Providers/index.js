@@ -12,7 +12,7 @@ import {
   ColSpace,
 } from '../../components'
 import brands from './brands'
-import { BLUE, WHITE } from '../../constants/colors'
+import { BLUE, WHITE, LIGHT_BLUE } from '../../constants/colors'
 import { maxWidth, SM } from '../../constants/widths'
 
 const BORDER_WIDTH = '12px'
@@ -45,9 +45,9 @@ const SpotlightImg = s.img`
 `
 
 const SpotlightWrapper = s.div`
-  border: ${BORDER_WIDTH} solid ${BLUE};
+  border: ${BORDER_WIDTH} solid ${({ color }) => color};
   box-sizing: border-box;
-  margin: 0 2rem;
+  margin: 0 2rem 2rem 2rem;
 `
 
 const Spotlight = s.div`
@@ -94,7 +94,7 @@ export default () => (
       <RowSpace />
       <RowSpace />
 
-      <SpotlightWrapper>
+      <SpotlightWrapper color={BLUE}>
         <Spotlight>
           <Row>
             <ImgCol>
@@ -109,7 +109,29 @@ export default () => (
               </Title>
 
               <Text>
-                Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire of 2015. Her passion to help people  then led her to to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.
+                Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire of 2015. Her passion to help people then led her to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.
+              </Text>
+            </TextCol>
+          </Row>
+        </Spotlight>
+      </SpotlightWrapper>
+
+      <SpotlightWrapper color={LIGHT_BLUE}>
+        <Spotlight>
+          <Row>
+            <ImgCol>
+              <SpotlightImg src="/static/emily.jpg" alt="emily" />
+            </ImgCol>
+
+            <ColSpace />
+
+            <TextCol>
+              <Title marginTop="0">
+                ...and Colleen
+              </Title>
+
+              <Text>
+                Colleen Catherine Barry graduated from the University of Scranton Bachelors of Sciences of Nursing program in 2015. She then went on to start her career at Cape Cod Hospital and has continued on to New England Baptist Hospital. She enjoys the specialized field of orthopedics. Colleen also has a strong passion for aesthetic nursing and has pursued training at the Aesthetic Institute of Massachusetts for injectables.
               </Text>
             </TextCol>
           </Row>
