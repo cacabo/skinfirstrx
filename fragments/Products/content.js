@@ -8,7 +8,7 @@ export default [
   {
     "name": "HA5 Rejuvenating Hydrator (2oz)",
     "retail": 178,
-    "description": "Provides immediate smoothing in the appearance of fine lines and wrinkles, an supports the skin's natural ability to replenish its own hyaluronic acid for overall skin health. Appropriate for all skin types.",
+    "description": "Provides immediate smoothing in the appearance of fine lines and wrinkles, and supports the skin's natural ability to replenish its own hyaluronic acid for overall skin health. Appropriate for all skin types.",
     "image": "ha5-rejuvenating-hydrator.jpg"
   },
   {
@@ -36,8 +36,9 @@ export default [
     "image": "lumvive.jpg"
   },
   {
-    "name": "Essential Defense Mineral Shield SPF 35",
-    "description": "This sheer lightweight, mineral sunscreen gives you the highest level of UVA protection available, along with UVB coverage to protect you from damaging rays.",
-    "retail": 38
+    "name": "Essential Defense Mineral Shield",
+    "description": "Appropriate for post procedure and sensitive skin types; Net weight & TSA friendly; Key Benefits: Protects against damaging UVA and UVB rays, Will not clog pores, Paraben free, Hypoallergenic, oil free and fragrance free.",
+    "retail": 38,
+    "image": "essential-defense.png"
   }
 ]

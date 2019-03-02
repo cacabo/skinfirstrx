@@ -1,4 +1,6 @@
+import React from 'react'
 import s from 'styled-components'
+import PropTypes from 'prop-types'
 
 import { Text, SmallText } from '../../components'
 import { BORDER } from '../../constants/colors'
@@ -7,7 +9,7 @@ const Wrapper = s.div`
   padding: 0 0.5rem;
 `
 
-const Product = s.div`
+const ProductDiv = s.div`
   padding: 1rem calc(1rem + 2.5%) 0.5rem calc(1rem + 2.5%);
   border: 1px solid ${BORDER};
   box-shadow: 0px 1px 4px ${BORDER};
@@ -21,26 +23,46 @@ const ImageWrapper = s.div`
 `
 
 const Image = s.img`
-  height: 4rem;
+  height: 8rem;
   max-width: 100%;
-  height: auto;
   display: inline-block;
   text-align: center;
   margin: 0 auto;
 `
 
-export default ({ name, retail, description, image }) => (
+const Product = ({
+  name,
+  retail,
+  description,
+  image,
+}) => (
   <Wrapper>
-    <Product>
+    <ProductDiv>
       {image && (
         <ImageWrapper>
-          <Image src={`static/products/` + image} alt={name} />
+          <Image src={`static/products/${image}`} alt={name} />
         </ImageWrapper>
       )}
 
-      <Text right>${retail}</Text>
+      <Text right>
+        $
+        {retail}
+      </Text>
       <Text><strong>{name}</strong></Text>
       <SmallText>{description}</SmallText>
-    </Product>
+    </ProductDiv>
   </Wrapper>
 )
+
+Product.defaultProps = {
+  image: null,
+}
+
+Product.propTypes = {
+  name: PropTypes.string.isRequired,
+  retail: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string,
+}
+
+export default Product

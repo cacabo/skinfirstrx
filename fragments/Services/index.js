@@ -1,3 +1,4 @@
+import React from 'react'
 import s from 'styled-components'
 
 import {
@@ -11,7 +12,7 @@ import {
   RowSpace,
   Container,
 } from '../../components'
-import { LILAC, LIGHT_GRAY, BLUE } from '../../constants/colors'
+import { LIGHT_GRAY, BLUE } from '../../constants/colors'
 
 const Results = s.div`
   width: 100%;
@@ -52,10 +53,12 @@ export default () => (
             <ResultsImg bg="/static/results/susan-after.png" />
           </Results>
           <Text>
-            <strong>Neurotoxins:</strong> &nbsp;<i>Botox, Dyport Xeomin</i>
+            <strong>Neurotoxins:</strong>
+            &nbsp;
+            <i>Botox, Dyport Xeomin</i>
           </Text>
           <Text>
-            Used for treatment of moderate to severe forehead lines, crow’s feet, and frown lines between the eyebrows in adults over 18. Botox softens the appearance of wrinkles causing smoother looking skin.
+            {'Used for treatment of moderate to severe forehead lines, crow’s feet, and frown lines between the eyebrows in adults over 18. Botox softens the appearance of wrinkles causing smoother looking skin.'}
           </Text>
         </Col>
         <ColSpace width="2rem" />
@@ -65,10 +68,12 @@ export default () => (
             <ResultsImg bg="/static/results/catherine-after.png" />
           </Results>
           <Text>
-            <strong>Dermal fillers:</strong> &nbsp;<i>Juvéderm</i>
+            <strong>Dermal fillers:</strong>
+            &nbsp;
+            <i>Juvéderm</i>
           </Text>
           <Text>
-            Fillers give lift and restore volume in the cheeks, lips and chin. Fillers can be used to help smooth wrinkles in the folds around your mouth and nose.
+            {'Fillers give lift and restore volume in the cheeks, lips and chin. Fillers can be used to help smooth wrinkles in the folds around your mouth and nose.'}
           </Text>
         </Col>
       </Row>

@@ -1,3 +1,4 @@
+import React from 'react'
 import s from 'styled-components'
 
 import {
@@ -109,7 +110,7 @@ export default () => (
               </Title>
 
               <Text>
-                Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire of 2015. Her passion to help people then led her to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.
+                {'Emily Simon completed her Bachelors degree in Psychology at the University of New Hampshire of 2015. Her passion to help people then led her to the Massachusetts General Hospital Institute of Health Professions, where she completed the Accelerated Bachelors of Sciences in Nursing program in 2017. As a Registered Nurse, Emily has been working in plastic surgery as both a staff and operating room nurse. She has recently completed postgraduate training for injectables at the Aesthetic Institute of Massachusetts in Waltham to supplement her newfound love for Aesthetic Nursing.'}
               </Text>
             </TextCol>
           </Row>
@@ -120,7 +121,7 @@ export default () => (
         <Spotlight>
           <Row>
             <ImgCol>
-              <SpotlightImg src="/static/emily.jpg" alt="emily" />
+              <SpotlightImg src="/static/colleen.jpg" alt="emily" />
             </ImgCol>
 
             <ColSpace />
@@ -131,7 +132,7 @@ export default () => (
               </Title>
 
               <Text>
-                Colleen Catherine Barry graduated from the University of Scranton Bachelors of Sciences of Nursing program in 2015. She then went on to start her career at Cape Cod Hospital and has continued on to New England Baptist Hospital. She enjoys the specialized field of orthopedics. Colleen also has a strong passion for aesthetic nursing and has pursued training at the Aesthetic Institute of Massachusetts for injectables.
+                {'Colleen Catherine Barry graduated from the University of Scranton Bachelors of Sciences of Nursing program in 2015. She then went on to start her career at Cape Cod Hospital and has continued on to New England Baptist Hospital. She enjoys the specialized field of orthopedics. Colleen also has a strong passion for aesthetic nursing and has pursued training at the Aesthetic Institute of Massachusetts for injectables.'}
               </Text>
             </TextCol>
           </Row>

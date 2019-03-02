@@ -12,6 +12,7 @@ import Consultation from '../fragments/Consultation/index'
 import Services from '../fragments/Services/index'
 import Providers from '../fragments/Providers/index'
 import Testimonials from '../fragments/Testimonials/index'
+import GrowthFactors from '../fragments/GrowthFactors/index'
 
 export default class Home extends Component {
   constructor(props) {
@@ -40,7 +41,9 @@ export default class Home extends Component {
         <Products />
         <Testimonials />
         <Providers />
+
         {/* <FAQ /> */}
+
         <Contact />
       </Layout>
     )
