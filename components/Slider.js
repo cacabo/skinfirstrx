@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import SliderComponent from 'react-slick'
 import s from 'styled-components'
 
@@ -40,7 +41,7 @@ const Chevron = s.img`
   height: auto;
 `
 
-export class Slider extends Component {
+export class Slider extends Component { // eslint-disable-line
   constructor(props) {
     super(props)
     this.next = this.next.bind(this)
@@ -60,7 +61,7 @@ export class Slider extends Component {
 
     return (
       <SliderWrapper>
-        <SliderComponent ref={component => (this.slider = component)} {...settings}>
+        <SliderComponent ref={(component) => { this.slider = component }} {...settings}>
           { children }
         </SliderComponent>
 
@@ -77,4 +78,13 @@ export class Slider extends Component {
       </SliderWrapper>
     )
   }
+}
+
+Slider.defaultProps = {
+  settings: {},
+}
+
+Slider.propTypes = {
+  children: PropTypes.node.isRequired,
+  settings: PropTypes.object, // eslint-disable-line
 }

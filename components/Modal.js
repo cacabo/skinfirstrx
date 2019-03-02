@@ -37,7 +37,7 @@ const fadeOut = keyframes`
   }
 `
 
-const slideIn = (width) => keyframes`
+const slideIn = width => keyframes`
   0% {
     margin-left: 100%;
   }
@@ -47,7 +47,7 @@ const slideIn = (width) => keyframes`
   }
 `
 
-const slideOut = (width) => keyframes`
+const slideOut = width => keyframes`
   0% {
     margin-left: ${100 - width}%;
   }
@@ -76,9 +76,9 @@ const ModalWrapper = styled.div`
   background: ${WRAPPER_SHADE};
   z-index: ${Z_INDEX};
   animation-name: ${({ isNewlyMounted, show }) => {
-    if (isNewlyMounted) return '';
-    if (show) return fadeIn;
-    return fadeOut;
+    if (isNewlyMounted) return ''
+    if (show) return fadeIn
+    return fadeOut
   }};
 
   animation-duration: ${ANIMATION_DURATION};
@@ -124,34 +124,34 @@ function noop(event) {
 
 export class Modal extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       isNewlyMounted: true,
-    };
+    }
 
-    this.makeNotNewlyMounted = this.makeNotNewlyMounted.bind(this);
+    this.makeNotNewlyMounted = this.makeNotNewlyMounted.bind(this)
   }
 
   // Avoid animations showing on load
   componentDidUpdate(prevProps) {
-    const { show } = this.props;
-    const { isNewlyMounted } = this.state;
+    const { show } = this.props
+    const { isNewlyMounted } = this.state
 
     if (isNewlyMounted && prevProps.show !== show) {
-      this.makeNotNewlyMounted();
+      this.makeNotNewlyMounted()
     }
   }
 
   makeNotNewlyMounted() {
     this.setState({
       isNewlyMounted: false,
-    });
+    })
   }
 
   render() {
-    const { show, toggle, children } = this.props;
-    const { isNewlyMounted } = this.state;
+    const { show, toggle, children } = this.props
+    const { isNewlyMounted } = this.state
 
     return (
       <ModalWrapper show={show} onClick={toggle} isNewlyMounted={isNewlyMounted}>
@@ -170,7 +170,7 @@ export class Modal extends Component {
 Modal.propTypes = {
   show: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
-  children: PropTypes.any.isRequired, // eslint-disable-line
+  children: PropTypes.node.isRequired,
 }
 
 export const ModalContainer = styled.div`

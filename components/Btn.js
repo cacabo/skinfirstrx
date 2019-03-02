@@ -1,5 +1,8 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 import Link from 'next/link'
+
 import { BLUE, WHITE, DARK_BLUE } from '../constants/colors'
 
 const styles = `
@@ -41,7 +44,7 @@ const BtnInput = s.input`
   `)}
 `
 
-export const Btn = ({
+export const Btn = ({ // eslint-disable-line
   href = '',
   children,
   isInput = false,
@@ -73,4 +76,20 @@ export const Btn = ({
       {children}
     </BtnWrapper>
   )
+}
+
+Btn.defaultProps = {
+  href: '',
+  children: null,
+  isInput: false,
+  handleClick: null,
+  disabled: false,
+}
+
+Btn.propTypes = {
+  href: PropTypes.string,
+  isInput: PropTypes.bool,
+  disabled: PropTypes.bool,
+  children: PropTypes.node,
+  handleClick: PropTypes.func,
 }

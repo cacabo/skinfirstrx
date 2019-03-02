@@ -1,10 +1,11 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 import {
   PINK,
   RED,
   LIGHT_BLUE,
-  BLUE,
   DARK_BLUE,
   BLUE_BORDER,
   RED_BORDER,
@@ -33,6 +34,14 @@ const SuccessWrapper = s(Wrapper)`
   border-color: ${BLUE_BORDER};
 `
 
+const defaultProps = {
+  message: '',
+}
+
+const propTypes = {
+  message: PropTypes.string,
+}
+
 export const ErrorMessage = ({ message = '' }) => {
   if (!message) return null
 
@@ -43,6 +52,9 @@ export const ErrorMessage = ({ message = '' }) => {
   )
 }
 
+ErrorMessage.defaultProps = defaultProps
+ErrorMessage.propTypes = propTypes
+
 export const SuccessMessage = ({ message = '' }) => {
   if (!message) return null
 
@@ -52,3 +64,6 @@ export const SuccessMessage = ({ message = '' }) => {
     </SuccessWrapper>
   )
 }
+
+SuccessMessage.defaultProps = defaultProps
+SuccessMessage.propTypes = propTypes

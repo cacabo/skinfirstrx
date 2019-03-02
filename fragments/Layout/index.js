@@ -25,6 +25,8 @@ const Layout = ({ children }) => (
       <meta name="keywords" content="TODO" />
       <meta name="author" content="Skin First RX" />
 
+      <link rel="stylesheet" href="/static/style.css" />
+
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet" />
 
       <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />

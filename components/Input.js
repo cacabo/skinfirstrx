@@ -1,8 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 import { Label } from './index'
-import { BLUE, GRAY, LIGHT_GRAY, WHITE } from '../constants/colors'
+import {
+  BLUE,
+  GRAY,
+  LIGHT_GRAY,
+  WHITE,
+} from '../constants/colors'
 
 const InputField = s.input`
   border-radius: 6px;
@@ -27,7 +33,7 @@ const InputField = s.input`
   }
 `
 
-export const Input = ({
+export const Input = ({ // eslint-disable-line
   name = '',
   label = '',
   placeholder = '',
@@ -44,3 +50,19 @@ export const Input = ({
     />
   </div>
 )
+
+Input.defaultProps = {
+  name: '',
+  label: '',
+  placeholder: '',
+  value: undefined,
+  handleChange: () => {},
+}
+
+Input.propTypes = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.any, // eslint-disable-line
+  handleChange: PropTypes.func,
+}

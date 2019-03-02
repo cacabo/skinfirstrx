@@ -1,8 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import s from 'styled-components'
 
 import { Label } from './index'
-import { LIGHT_GRAY, GRAY, BLUE, WHITE } from '../constants/colors'
+import {
+  LIGHT_GRAY,
+  GRAY,
+  BLUE,
+  WHITE,
+} from '../constants/colors'
 
 const TextareaField = s.textarea`
   border-radius: 6px;
@@ -28,7 +34,7 @@ const TextareaField = s.textarea`
   }
 `
 
-export const Textarea = ({
+export const Textarea = ({ // eslint-disable-line
   name = '',
   label = '',
   placeholder = '',
@@ -47,3 +53,21 @@ export const Textarea = ({
     />
   </div>
 )
+
+Textarea.defaultProps = {
+  name: '',
+  label: '',
+  placeholder: '',
+  rows: 4,
+  value: undefined,
+  handleChange: () => {},
+}
+
+Textarea.propTypes = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  rows: PropTypes.number,
+  value: PropTypes.any, // eslint-disable-line
+  handleChange: PropTypes.func,
+}

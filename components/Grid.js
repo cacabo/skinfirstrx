@@ -1,5 +1,11 @@
 import styled from 'styled-components'
-import { SM, MD, LG, minWidth, maxWidth } from '../constants/widths'
+import {
+  SM,
+  MD,
+  LG,
+  minWidth,
+  maxWidth,
+} from '../constants/widths'
 
 export const Container = styled.div`
   width: 100%;
@@ -46,7 +52,7 @@ export const Flex = styled.div`
 `
 
 export const Col = styled.div`
-  flex: ${({ width }) => width ? 'none' : 1};
+  flex: ${({ width }) => (width ? 'none' : 1)};
   width: ${({ width }) => width || 'auto'};
 
   ${({ flex }) => flex && (`
