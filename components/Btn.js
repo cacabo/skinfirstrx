@@ -9,7 +9,7 @@ const styles = `
   background: ${BLUE};
   padding: 18px 24px;
   border-radius: 6px;
-  color: ${WHITE};
+  color: ${WHITE} !important;
   display: inline-block;
   cursor: pointer;
   margin-top: 1rem;
@@ -22,7 +22,7 @@ const styles = `
   :focus,
   :active {
     background: ${DARK_BLUE};
-    color: ${WHITE};
+    color: ${WHITE} !important;
   }
 `
 

@@ -3,19 +3,69 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import s from 'styled-components'
 
-import { WHITE } from '../../constants/colors'
+import { WHITE, BLUE, DARK_BLUE } from '../../constants/colors'
 import Nav from '../Nav'
 import Footer from '../Footer'
-import Style from './Style'
-import Slick from './Slick'
 
 const App = s.div`
   width: 100%;
   min-height: 75vh;
 `
 
+const Wrapper = s.div`
+  .slick-dots {
+    width: 100%;
+    transform: translateY(1rem);
+    z-index: 1;
+  }
+
+  .slick-arrow {
+    display: none;
+  }
+
+  html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+    cursor: hand !important;
+    text-decoration: none !important;
+    color: ${BLUE};
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    color: ${DARK_BLUE};
+  }
+
+  a:visited {
+    color: ${BLUE};
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  p,
+  li,
+  a,
+  button {
+    font-family: 'Montserrat', sans-serif;
+  }
+`
+
 const Layout = ({ children }) => (
-  <div>
+  <>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
       <meta charSet="utf-8" />
@@ -50,19 +100,16 @@ const Layout = ({ children }) => (
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content={WHITE} />
     </Head>
+    <Wrapper>
+      <Nav />
 
-    <Style />
+      <App>
+        { children }
+      </App>
 
-    <Slick />
-
-    <Nav />
-
-    <App>
-      { children }
-    </App>
-
-    <Footer />
-  </div>
+      <Footer />
+    </Wrapper>
+  </>
 )
 
 Layout.propTypes = {
